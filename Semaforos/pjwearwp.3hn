@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ETOR</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="styles/bastrap.css" rel="stylesheet" />
+    <link href="styles/presentacion.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!--<script src="Scripts/appEstimacion.js"></script>-->
+    <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js" integrity="sha256-6HSLgn6Ao3PKc5ci8rwZfb//5QUu3ge2/Sw9KfLuvr8=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $('.sortme').sortable({
+                    connectWith: '.sortme'
+                }).disableSelection();
+
+            });
+        });    
+    </script>
+    <style>
+        #elePool,
+        #eleGroups {
+            float: left;
+            margin-right: 30px;
+            width: 300px;
+            border: 1px solid grey;
+            min-height: 25px;
+        }
+
+        #eleGroups {
+            min-height: 300px;
+        }
+
+            #eleGroups .group div,
+            #elePool div {
+                border: 1px solid grey;
+                background-color: lightcyan;
+                line-height: 25px;
+                cursor: -webkit-grab;
+                cursor: grab;
+                text-indent: 15px;
+            }
+
+            #eleGroups > div {
+                position: relative;
+                box-sizing: border-box;
+                min-height: 100px;
+                border: 1px dashed lightgray;
+                padding-top: 20px;
+            }
+
+                #eleGroups > div::after {
+                    position: absolute;
+                    top: 1px;
+                    left: 2px;
+                    font-size: 12px;
+                    color: grey;
+                }
+
+                #eleGroups > div:nth-child(1)::after {
+                    content: "FOOD HERE";
+                }
+
+                #eleGroups > div:nth-child(2)::after {
+                    content: "CARS HERE";
+                }
+
+                #eleGroups > div:nth-child(3)::after {
+                    content: "ANIMALS HERE";
+                }
+        .containerDrags {
+            margin:5px;
+            width:auto;
+            height:auto;
+            border-style:dashed;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-primary navbar-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <a class="navbar-brand bac-header" href="index.html">Buenos Aires Ciudad</a>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main-container no-padding-top">
+        <div class="row">
+            <div class="col-md-3"> PARAMETROS </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-2">
+                        
+                        <!--<div id='elePool' class='sortme'>
+                            <div>Pizza</div>
+                            <div>Fiat</div>
+                            <div>Jeep</div>
+                            <div>Cat</div>
+                            <div>Dog</div>
+                        </div>-->
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="containerDrags"></div>
+                                <div class="containerDrags"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="containerDrags"></div>
+                                <div class="containerDrags"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="containerDrags"></div>
+                                <div class="containerDrags"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div id='elePool' class='sortme'>
+                    <div>Pizza</div>
+                    <div>Fiat</div>
+                    <div>Jeep</div>
+                    <div>Cat</div>
+                    <div>Dog</div>
+                </div>
+                <div id='eleGroups'>
+                    <div class='sortme group group-food'></div>
+                    <div class='sortme group group-cars' style="float:right"></div>
+                    <div class='sortme group group-animals'></div>
+                    <div class='sortme group group-cars1' style="float: right; "></div>
+                    <div class='sortme group group-animals2'></div>
+                    <div class='sortme group group-cars2' style="float: right; "></div>
+                </div>-->
+            </div>
+        </div>
+    </main>
+    <!--<main class="main-container no-padding-top" role="main">
+
+
+
+
+        <div id="conclusion">
+            <span class="label label-success">
+
+                <span style="float:left">
+                    TOTAL:
+                </span>
+                <span id="total" style="float:right;margin-left:50%"></span>
+            </span>
+            <span class="label label-primary">
+                INGRESOS:
+                <span id="ingresos-total" style="float:right;margin-left:40%"></span>
+
+            </span>
+            <span class="label label-warning">
+                EGRESOS:
+                <span id="egresos-total" style="float:right;margin-left:42%"></span>
+
+            </span>
+            <h3>
+                Afectación por Dellepiane (%)
+            </h3>
+            <select id="cmbAfectacionDellepiane" class="form-control" style="font-weight:bold;width:120px">
+                <option >0</option>
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+                <option selected="selected">20</option>
+                <option>25</option>
+                <option>30</option>
+                <option >35</option>
+                <option>40</option>
+                <option>45</option>
+                <option>50</option>
+            </select>
+
+            <h3>
+                Duración de la concesión (años)
+            </h3>
+            <select id="cmbAniosConcesion" class="form-control" style="font-weight:bold;width:120px">
+                <option>5</option>
+                <option>10</option>
+                <option >15</option>
+                <option selected="selected" >20</option>
+                <option>25</option>
+                <option>30</option>
+            </select>
+            <h3>
+                Cánon mensual ($)
+            </h3>
+            <input id="txtCanon" type="text" value="100,000" class="form-control" style="font-weight:bold;width:120px" />
+
+            <h3>
+                Tasa de Ganancia (%)
+            </h3>
+            <input id="txtGanancia" type="text" value="10" class="form-control" style="font-weight:bold;width:120px" />
+            <div id="graficos">
+                <div id="grafico-ingresos">
+                </div>
+                <div id="grafico-egresos">
+                </div>
+            </div>
+            <span class="label label-success" style="font-size:x-large">
+                OBRA: $
+                <br />
+                <span id="totalObra" style="margin-left:40px"></span>
+                <span id="total-info" style="float:right"></span>
+            </span>
+            <div id="graficos">
+                <div id="grafico-ingresos">
+                </div>
+                <div id="grafico-egresos">
+                </div>
+            </div>
+        </div>
+
+        <div id="entradas">
+            <h2> PRINCIPALES RUBROS A DEFINIR </h2>
+            <table class="table" id="rubros-principales">
+                <tr>
+                    <td class="primary" style="text-align:center;">
+                        <h3>
+                            INGRESOS
+                        </h3>
+                    </td>
+                    <td class="warning" style="text-align:center;width:50%">
+                        <h3>
+                            EGRESOS
+                        </h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="primary celda-principal">
+                        <table class="gasoil">
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    TOQUE DE DÁRSENA INTERNACIONAL
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Cantidad <br />(Desp. Dellep.)</td>
+                                <td>Precio Actual</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadToqueIntADellepiane" type="text" value="28,724" readonly="readonly" class="form-control" /></td>
+                                <td><input id="txtCantidadToqueInt" type="text" value="22,979" readonly="readonly" class="form-control darsenaInt " /></td>
+                                <td><input id="txtPrecioToqueInt" type="text" value="120" class="form-control darsenaInt" /></td>
+                                <td><input id="txtTotalToqueInt" type="text" value="2,757,480" readonly="readonly" class="form-control ingreso " /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning">
+                        <table>
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    EMPLEADOS DE LIMPIEZA
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad (3 turnos)</td>
+                                <td>Precio Mercado</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadLimp" type="text" value="80" class="form-control limp" /></td>
+                                <td><input id="txtPrecioLimp" type="text" value="21,780" class="form-control limp" /></td>
+                                <td><input id="txtTotalLimp" type="text" value="20,908,800" readonly="readonly" class="form-control egreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="primary">
+                        <table class="gasoil">
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    TOQUE DE DÁRSENA NACIONAL
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Cantidad <br /> (Desp. Dellep.)</td>
+                                <td>Precio Actual:</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadToqueNacADellepiane" type="text" value="467,583" class="form-control" /></td>
+                                <td><input id="txtCantidadToqueNac" type="text" value="374,066" class="form-control darsenaNac" /></td>
+                                <td><input id="txtPrecioToqueNac" type="text" value="100" class="form-control darsenaNac" /></td>
+                                <td><input id="txtTotalToqueNac" type="text" value="37,406,600" readonly="readonly" class="form-control ingreso " /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning">
+                        <table>
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    SEGURIDAD
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad (3 turnos)</td>
+                                <td>Precio Mercado</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadSeg" type="text" value="43" class="form-control seg" /></td>
+                                <td><input id="txtPrecioSeg" type="text" value="17,440" class="form-control seg" /></td>
+                                <td><input id="txtTotalSeg" type="text" value="8,999,040" readonly="readonly" class="form-control egreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                 
+                </tr>
+                <tr>
+                    <td class="primary">
+                        <table class="gasoil">
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    ESTACIONAMIENTO
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad ub</td>
+                                <td>Precio ub:</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadEst" type="text" value="479,370" class="form-control est " /></td>
+                                <td><input id="txtPrecioEst" type="text" value="44" class="form-control est" /></td>
+                                <td><input id="txtTotalEst" type="text" value="21,092,280" readonly="readonly" class="form-control ingreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning">
+                        <table>
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    GASTOS PERSONAL
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Costo Medio Mensual:</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadPers" type="text" value="94" class="form-control pers" /></td>
+                                <td><input id="txtPrecioPers" type="text" value="24,876" class="form-control pers" /></td>
+                                <td><input id="txtTotalPers" type="text" value="28,060,128" readonly="readonly" class="form-control egreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="primary">
+                        <table>
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    ALQUILER ESTACIONES DE SERVICIO
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Costo mensual</td>
+                                <td>Total contrato YPF</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="2" class="form-control" readonly="readonly" /></td>
+                                <td><input id="txtMensualYPF" type="text" value="2,265,646" class="form-control ypf" /></td>
+                                <td><input id="txtTotalYPF" type="text" value="27,187,754" readonly="readonly" class="form-control ingreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning">
+                        <table>
+                            <tr style="width:100%" class="titulo">
+                                <td colspan="2">
+                                    ASESORAMIENTO
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:33%"></td>
+                                <td>Costo Total</td>
+                            </tr>
+                            <tr>
+                                <td style="width:33%"></td>
+                                <td><input id="txtAsesoramiento" type="text" value="0" class="form-control egreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="primary">
+                        <table>
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    ALQUILER LOCALES COMERCIALES
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad m2</td>
+                                <td>Precio m2 mensual:</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadLoc" type="text" value="2,600" class="form-control loc" /></td>
+                                <td><input id="txtPrecioLoc" type="text" value="400" class="form-control loc" /></td>
+                                <td><input id="txtTotalLoc" type="text" value="12,480,000" readonly="readonly" class="form-control ingreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning">
+                        <table>
+                            <tr style="width:100%">
+                                <td colspan="2" class="titulo">
+                                    ELECTRICIDAD
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:33%"></td>
+                                <td>Estimación neta de ingresos</td>
+                            </tr>
+                            <tr>
+                                <td style="width:33%"></td>
+                                <td><input id="txtLuz" type="text" value="627,286" class="form-control egreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="primary">
+                        <table class="gasoil">
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    ALQUILER BOLETERÍAS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Precio mensual</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadBol" type="text" value="216" readonly="readonly" class="form-control bol " /></td>
+                                <td><input id="txtPrecioBol" type="text" value="7,000" class="form-control bol" /></td>
+                                <td><input id="txtTotalBol" type="text" value="18,144,000" readonly="readonly" class="form-control ingreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning">
+                        <table >
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    MANTENIMIENTO ESCALERAS MECÁNICAS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Precio mensual</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadEsc" type="text" value="12" class="form-control esc " /></td>
+                                <td><input id="txtPrecioBol" type="text" value="37,500" class="form-control esc"  /></td>
+                                <td><input id="txtTotalBol" type="text" value="5,400,000" readonly="readonly" class="form-control egreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="primary">
+                        <table class="gasoil">
+                            <tr>
+                                <td colspan="3" class="titulo">
+                                    ALQUILER OFICINAS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Precio mensual/m2</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadOfi" type="text" value="3,368" readonly="readonly" class="form-control ofi " /></td>
+                                <td><input id="txtPrecioOfi" type="text" value="150" class="form-control ofi" /></td>
+                                <td><input id="txtTotalOfi" type="text" value="6,062,400" readonly="readonly" class="form-control ingreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning">
+                        <table>
+                            <tr>
+                                <td class="titulo">
+                                    MANTENIMIENTO ANUAL TERRAZAS VERDES
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtTerrazas" type="text" value="522,720" class="form-control egreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                <tr>
+                    <td class="primary">
+                        <table class="gasoil">
+                            <tr>
+                                <td colspan="4" class="titulo">
+                                    ALQUILER DEPÓSITOS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>Precio mensual/m2</td>
+                                <td>Aprovechamiento (%)</td>
+                                <td>Total</td>
+                            </tr>
+                            <tr>
+                                <td><input id="txtCantidadDep" type="text" value="4,012" readonly="readonly" class="form-control dep " /></td>
+                                <td><input id="txtPrecioDep" type="text" value="100" class="form-control dep" /></td>
+                                <td><input id="txtAprovechamientoDep" type="text" value="100" class="form-control dep" /></td>
+                                <td><input id="txtTotalDep" type="text" value="4,814,400" readonly="readonly" class="form-control ingreso" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="warning"></td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <div>
+                <div>
+                    <h2> RUBROS SECUNDARIOS </h2>
+                    <table class="table" id="rubros-secundarios">
+                        <tr>
+                            <td class="primary" style="text-align:center;">
+                                <h3>
+                                    INGRESOS
+                                </h3>
+                            </td>
+                            <td class="warning" style="text-align:center;width:50%">
+                                <h3>
+                                    EGRESOS
+                                </h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Ingresos Playa de Maniobras <br />
+                                <input type="text" value="2792994" class="ingreso" />
+                            </td>
+                            <td>
+                                Impuesto Ingresos Brutos <br />
+                                <input type="text" value="4515363" class="ingreso" />
+                            </td>
+                        </tr>
+                        <tr> <td class="primary">Ingresos Playa de Maniobras<br /><input type="text" value="3,714,682" class="ingreso" /></td><td class="warning">Impuestos<br />  <input type="text" value="11,618,242" class="egreso" /></td></tr>
+                        <tr> <td class="primary">Ingresos Varios<br /><input type="text" value="7,104,327" class="ingreso" /></td><td class="warning">Mantenimiento (Sin Escaleras Mecánicas) <br />  <input type="text" value="9,530,046" class="egreso" /></td></tr>
+                        <tr> <td class="primary">Ingresos Publicidad<br /><input type="text" value="14,340,229" class="ingreso" /></td><td class="warning">Comisiones y Gastos Bancarios<br />  <input type="text" value="7,250,267" class="egreso" /></td></tr>
+                        <tr> <td class="primary">Ingreso Expensas<br /><input type="text" value="4,564,958" class="ingreso" /></td><td class="warning">Honorarios<br />  <input type="text" value="3,380,547" class="egreso" /></td></tr>
+                        <tr> <td class="primary"><br /><input type="text" value="0" class="ingreso" /></td><td class="warning">Otros Servicios<br />  <input type="text" value="3,197,685" class="egreso" /></td></tr>
+                        <tr> <td class="primary"><br /><input type="text" value="0" class="ingreso" /></td><td class="warning">Gastos Varios<br />  <input type="text" value="3,652,146" class="egreso" /></td></tr>
+                     
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>-->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <a class="navbar-brand bac-footer" href="http://www.buenosaires.gob.ar" target="_blank">Buenos Aires Ciudad</a>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="sub-brand">
+                            <p>
+                                Subsecretaría de Tránsito y Transporte<br />
+                                <span class="text-muted">Ministerio de Desarrollo Urbano y Transporte</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+ 
+</body>
+</html>
