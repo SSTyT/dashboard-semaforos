@@ -4,6 +4,7 @@
 <head>
     <title>Dashboard Pliego</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <!-- BAstrap -->
     <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
     <link href="assets/styles/bastrap.css" rel="stylesheet">
@@ -11,13 +12,20 @@
 </head>
 
 <body>
+    <div ng-app="dashboard-semaforos">
+        <bar-chart chart-data=""></bar-chart>
+    </div>
 
-    <!--view-->
-
+    <!--libs-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/d3.v3.min.js"></script>
+    <script src="assets/js/d3.tip.v0.6.3.js"></script>
     <script src="assets/js/angular.min.js"></script>
+
+    <!--app-->
+    <script src="app/app.js"></script>
+    <script src="app/components/barChart/barChartDir.js"></script>
 </body>
 
 </html>
