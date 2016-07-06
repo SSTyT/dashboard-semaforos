@@ -2,39 +2,38 @@ html, body, .content {
   height: 100%;
   width: 100%; }
 
-.bar-chart {
+bar-chart {
   font: 10px sans-serif; }
-  .bar-chart .axis path,
-  .bar-chart .axis line {
+  bar-chart .axis path,
+  bar-chart .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges; }
-  .bar-chart .bar {
+  bar-chart .bar {
     fill: orange; }
-    .bar-chart .bar :hover {
+    bar-chart .bar:hover {
       fill: orangered; }
-  .bar-chart .x .axis path {
-    display: none; }
-  .bar-chart .tip {
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  /* Creates a small triangle extender for the tooltip */
+  /* Style northward tooltips differently */ }
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
     line-height: 1;
-    font-weight: bold;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 2px;
-    /* Creates a small triangle extender for the tooltip */
-    /* Style northward tooltips differently */ }
-    .bar-chart .tip :after {
-      box-sizing: border-box;
-      display: inline;
-      font-size: 10px;
-      width: 100%;
-      line-height: 1;
-      color: rgba(0, 0, 0, 0.8);
-      content: "\25BC";
-      position: absolute;
-      text-align: center; }
-    .bar-chart .tip .n:after {
-      margin: -1px 0 0 0;
-      top: 100%;
-      left: 0; }
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center; }
+  .d3-tip.n:after {
+    margin: -2px 0 0 0;
+    top: 100%;
+    left: 0; }
