@@ -1,5 +1,5 @@
 
-angular.module('dashboad-semaforos').factory('DataOriginService', ['',DataOriginService ])
+angular.module('dashboard-semaforos').factory('DataOriginService', ['',DataOriginService ])
 
 
 

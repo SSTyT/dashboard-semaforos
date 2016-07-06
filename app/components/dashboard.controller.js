@@ -1,4 +1,4 @@
-angular.module('dashboad-semaforos',[]).controller('DashboardController', ['',DashboardController])
+angular.module('dashboard-semaforos').controller('DashboardController', [DashboardController])
 
 
 
