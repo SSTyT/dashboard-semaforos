@@ -1,0 +1,26 @@
+{
+  "name": "dashboard-semaforos",
+  "version": "0.0.1",
+  "description": "Dashboard para visualizar el pliego de los semaforos",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SSTyT/dashboard-semaforos.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SSTyT/dashboard-semaforos/issues"
+  },
+  "homepage": "https://github.com/SSTyT/dashboard-semaforos#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  }
+}
