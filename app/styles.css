@@ -1,6 +1,36 @@
-html, body, .content {
+html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  background: none; }
+
+.content .header {
+  background: #1D1C1A;
+  height: 10%;
+  display: flex; }
+  .content .header .logo {
+    background: url("/assets/img/bac-header.png");
+    height: 45px;
+    width: 272px; }
+  .content .header .title {
+    color: #FDD306;
+    font-size: 2em;
+    padding: 1em;
+    letter-spacing: 6px; }
+
+.content .parameters {
+  outline: 1px dotted red;
+  display: flex;
+  height: 400px; }
+  .content .parameters .coeficients {
+    flex-grow: 1;
+    outline: 1px dotted  yellow; }
+  .content .parameters .distribution {
+    outline: 1px dotted  gray;
+    flex-grow: 1; }
+
+.content .table {
+  outline: 1px dotted blue;
+  height: 1000px; }
 
 bar-chart {
   font: 10px sans-serif; }

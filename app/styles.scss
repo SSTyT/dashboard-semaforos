@@ -1,15 +1,43 @@
-html,body,.content{
+html,body,{
 	height:100%;
 	width:100%;
+	background:none;
 }
 .content{
 
-	.header{}
-	.parameters{
-		.coeficients{}
-		.distribution{}
+	.header{
+		background:#1D1C1A;
+		height: 10%;
+		display: flex;
+		.logo{
+			background: url('/assets/img/bac-header.png');
+			height:45px;
+			width: 272px;
+		}
+		.title{
+			color:#FDD306;
+			font-size: 2em;
+			padding:1em;
+		    letter-spacing: 6px;
+		}
 	}
-	.table{}
+	.parameters{
+		outline: 1px dotted red;
+		display: flex;
+		height: 400px;
+		.coeficients{
+			flex-grow: 1;
+			outline: 1px dotted  yellow;
+		}
+		.distribution{
+			outline: 1px dotted  gray;
+			flex-grow: 1;
+		}
+	}
+	.table{
+		outline: 1px dotted blue;
+		height: 1000px;
+	}
 }
 
 //imports
