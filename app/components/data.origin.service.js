@@ -1,14 +1,6 @@
+'use strict';
+angular.module('dashboard-semaforos').factory('DataOriginService', ['', DataOriginService]);
 
-angular.module('dashboard-semaforos').factory('DataOriginService', ['',DataOriginService ])
-
-
-
-
-function DataOriginService(){
-	
-
-
-
-	
-	return {}
+function DataOriginService() {
+  return {}
 }
