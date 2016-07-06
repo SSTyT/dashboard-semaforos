@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Dashboard Pliego</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- BAstrap -->
+        <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/styles/bastrap.css" rel="stylesheet">
+        <link href="app/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="content" ng-app="dashboad-semaforos" ng-controller="DashboardController as vm">
+            <div class="header"></div>
+            <div class="parameters">
+                <div class="coeficients"></div>
+                <div class="distribution"></div>
+            </div>
 
-<head>
-    <title>Dashboard Pliego</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- BAstrap -->
-    <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/styles/bastrap.css" rel="stylesheet">
-    <link href="app/styles.css" rel="stylesheet">
-</head>
+            <div class="table"></div>
+        </div>
+        <!--view-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/d3.v3.min.js"></script>
+        <script src="assets/js/angular.min.js"></script>
 
-<body>
-
-    <!--view-->
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/d3.v3.min.js"></script>
-    <script src="assets/js/angular.min.js"></script>
-</body>
-
+        <script src="app/components/dashboard.controller.js"></script>
+        <script src="app/components/data.origin.service.js"></script>
+        
+    </body>
 </html>

@@ -1,0 +1,83 @@
+{
+	id:"0",
+	label:"general",
+	coeficiente:0.0,
+	children:{
+		{
+			id:"1",
+			label:"1 - CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS:",
+			coeficiente:0.0,
+			children:{}
+		},
+		{
+			id:"2",
+			label:"2 - DAÑOS, TRASLADOS Y REMODELACIONES",
+			coeficiente:0.0,
+			children:{}
+		},
+
+		{
+			id:"3",
+			label:"3 - IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO",
+			coeficiente:0.0,
+			children:{}
+		},
+		{
+			id:"4",
+			label:"4 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS"
+			coeficiente:0.0,
+			children:{}
+		},
+		{
+			id:"5",
+			label:"5 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO",
+			coeficiente:0.0,
+			children:{}
+		},
+		{
+			id:"6",
+			label:"6 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES",
+			coeficiente:0.0,
+			children:{}
+		},
+		{
+			id:"7",
+			label:"7 - MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO",
+			coeficiente:0.0,
+			children:{}
+		},
+		{
+			id:"8",
+			label:"8 - OBRAS VARIAS Y ACTIVIDADES RESTANTES",
+			coeficiente:0.0,
+			children:{}
+		},
+		{
+			id:"9",
+			label:"9 - REPARACIÓN DE EQUIPOS CONTROLADORES",
+			coeficiente:0.0,
+			children:{}
+		},
+
+	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
