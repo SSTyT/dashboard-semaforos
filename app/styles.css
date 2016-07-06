@@ -1,3 +1,7 @@
+html, body, .content {
+  height: 100%;
+  width: 100%; }
+
 .bar-chart {
   font: 10px sans-serif; }
   .bar-chart .axis path,
@@ -11,7 +15,7 @@
       fill: orangered; }
   .bar-chart .x .axis path {
     display: none; }
-  .bar-chart .d3-tip {
+  .bar-chart .tip {
     line-height: 1;
     font-weight: bold;
     padding: 12px;
@@ -20,7 +24,7 @@
     border-radius: 2px;
     /* Creates a small triangle extender for the tooltip */
     /* Style northward tooltips differently */ }
-    .bar-chart .d3-tip :after {
+    .bar-chart .tip :after {
       box-sizing: border-box;
       display: inline;
       font-size: 10px;
@@ -30,7 +34,7 @@
       content: "\25BC";
       position: absolute;
       text-align: center; }
-    .bar-chart .d3-tip .n:after {
+    .bar-chart .tip .n:after {
       margin: -1px 0 0 0;
       top: 100%;
       left: 0; }

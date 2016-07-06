@@ -3,7 +3,6 @@ angular.module('dashboard-semaforos')
   .directive('barChart', [function() {
     return {
       restrict: 'E',
-      //templateUrl: 'app/components/barChart.html',
       scope: {
         'chartData': '='
       },
