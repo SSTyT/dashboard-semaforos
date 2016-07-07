@@ -1,24 +1,24 @@
 'use strict';
-angular.module('dashboard-semaforos').controller('DashboardController', ['DataOriginService',DashboardController])
+angular.module('dashboard-semaforos').controller('DashboardController', ['DataOriginService', DashboardController])
 
 function DashboardController(DataOriginService) {
 
-	var vm = this;
-vm.gridData = [] ; 
-DataOriginService.getTable().then(function successCallback(response) {
-	    // this callback will be called asynchronously
-	    // when the response is available
-	    console.log(response);
-	  	vm.gridData = response.data;
-	  }, function errorCallback(response) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	  	console.log(response);
-	  });
+  var vm = this;
+  vm.gridData = [];
+  DataOriginService.getTable().then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+    console.log(response);
+    vm.gridData = response.data;
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    console.log(response);
+  });
 
 
 
-function DashboardController() {
+  //function DashboardController() {
   var vm = this;
 
   vm.chartData = [
@@ -29,6 +29,7 @@ function DashboardController() {
     { letter: "Bd", frequency: 0.25 },
     { letter: "Bj", frequency: 0.25 },
     { letter: "C", frequency: 0.15 }
-  ]
+  ];
+
   console.log("READY!");
 }

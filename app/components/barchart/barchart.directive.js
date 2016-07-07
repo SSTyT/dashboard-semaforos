@@ -22,14 +22,14 @@ angular.module('dashboard-semaforos')
 
     var xAxis = d3.svg.axis()
       .scale(x)
-      .orient("bottom");
+      .orient('bottom');
 
     var y = d3.scale.linear()
       .range([height, 0]);
 
     var yAxis = d3.svg.axis()
       .scale(y)
-      .orient("left");
+      .orient('left');
 
     var z = d3.scale.category20c();
 
@@ -37,14 +37,14 @@ angular.module('dashboard-semaforos')
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
-        return "<strong>Monto:</strong> <span>$" + d.y + "</span>";
+        return '<strong>Monto:</strong> <span>$' + d.y + '</span>';
       })
 
-    var svg = d3.select('#' + $scope.id).append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var svg = d3.select('#' + $scope.id).append('svg')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     svg.call(tip);
 
@@ -52,19 +52,19 @@ angular.module('dashboard-semaforos')
     var layers = d3.layout.stack()(
       [
         [
-          { x: "A", y: 4534 },
-          { x: "B", y: 5322 },
-          { x: "C", y: 3555 },
+          { x: 'A', y: 4534 },
+          { x: 'B', y: 5322 },
+          { x: 'C', y: 3555 },
         ],
         [
-          { x: "A", y: 15000 },
-          { x: "B", y: 5000 },
-          { x: "C", y: 9000 },
+          { x: 'A', y: 15000 },
+          { x: 'B', y: 5000 },
+          { x: 'C', y: 9000 },
         ],
         [
-          { x: "A", y: 8000 },
-          { x: "B", y: 17000 },
-          { x: "C", y: 1700 },
+          { x: 'A', y: 8000 },
+          { x: 'B', y: 17000 },
+          { x: 'C', y: 1700 },
         ]
       ]
     );
@@ -77,56 +77,56 @@ angular.module('dashboard-semaforos')
       return d.y0 + d.y;
     })]).nice();
 
-    var layer = svg.selectAll(".layer")
+    var layer = svg.selectAll('.layer')
       .data(layers)
-      .enter().append("g")
-      .attr("class", "layer")
-      .style("fill", function(d, i) {
+      .enter().append('g')
+      .attr('class', 'layer')
+      .style('fill', function(d, i) {
         return z(i);
       });
 
-    var rects = layer.selectAll("rect")
+    var rects = layer.selectAll('rect')
       .data(function(d) {
         return d;
       }).enter();
 
-    rects.append("rect")
-      .attr("x", function(d) {
+    rects.append('rect')
+      .attr('x', function(d) {
         return x(d.x);
       })
-      .attr("y", function(d) {
+      .attr('y', function(d) {
         return y(d.y + d.y0);
       })
-      .attr("height", function(d) {
+      .attr('height', function(d) {
         return y(d.y0) - y(d.y + d.y0);
       })
-      .attr("width", x.rangeBand() - 1)
+      .attr('width', x.rangeBand() - 1)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
-    rects.append("text")
+    rects.append('text')
       .text(function(d) {
-        return "80%";
+        return '80%';
       })
-      .attr("x", function(d) {
+      .attr('x', function(d) {
         return x(d.x) + x.rangeBand() / 2 - 20;
       })
-      .attr("y", function(d) {
+      .attr('y', function(d) {
         return y(d.y / 2 + d.y0) + 6;
       })
-      .attr("class", 'bar-text');
+      .attr('class', 'bar-text');
 
-    svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
+    svg.append('g')
+      .attr('class', 'x axis')
+      .attr('transform', 'translate(0,' + height + ')')
       .call(xAxis);
 
-    svg.append("g")
-      .attr("class", "y axis")
+    svg.append('g')
+      .attr('class', 'y axis')
       .call(yAxis)
-      .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end");
+      .append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('y', 6)
+      .attr('dy', '.71em')
+      .style('text-anchor', 'end');
   }]);

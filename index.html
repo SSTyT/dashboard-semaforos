@@ -12,7 +12,6 @@
     </head>
     <body>
         <div class="content" ng-app="dashboard-semaforos" ng-controller="DashboardController as vm">
-
             <div class="header">
 
                 <div class="logo">
@@ -27,8 +26,7 @@
                     <h3>PARAMETROS</h3>
                 </div>
                 <div class="distribution">
-                    <div ng-include="assets/partials/prestadores.tpl.html" scope="" onload="">
-                    
+                    <div ng-include="'distribution/distribution.html'" scope="" onload="">
                 </div>
                 </div>
             </div>
@@ -47,8 +45,10 @@
         <script src="assets/js/ui-grid.min.js"></script>
 
         <!--app-->
+        <script src="app/shared/templates.js"></script>
         <script src="app/app.js"></script>
         <script src="app/components/barchart/barchart.directive.js"></script>
+        <script src="app/components/zone-picker/zone-picker.directive.js"></script>
         <script src="app/components/dashboard.controller.js"></script>
         <script src="app/components/data.origin.service.js"></script>
         
