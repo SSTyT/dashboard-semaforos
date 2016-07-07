@@ -18,9 +18,10 @@ html,body,{
 			color:#FDD306;
 			font-size: 2em;
 			padding:1em;
-		    letter-spacing: 6px;
+		    letter-spacing: 6px!important;
 		}
 	}
+	
 	.parameters{
 		outline: 1px dotted red;
 		display: flex;
@@ -28,15 +29,25 @@ html,body,{
 		.coeficients{
 			flex-grow: 1;
 			outline: 1px dotted  yellow;
+			h3{
+				margin:1em;
+			}
 		}
 		.distribution{
 			outline: 1px dotted  gray;
 			flex-grow: 1;
+			h3{
+				margin:1em;
+			}
 		}
 	}
-	.table{
+	.grid-wrapper{
 		outline: 1px dotted blue;
-		height: 1000px;
+		width: 1920px;
+		.grid{
+			width: 1920px;
+			
+		}
 	}
 }
 
