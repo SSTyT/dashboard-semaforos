@@ -15,7 +15,7 @@ html, body {
     color: #FDD306;
     font-size: 2em;
     padding: 1em;
-    letter-spacing: 6px; }
+    letter-spacing: 6px !important; }
 
 .content .parameters {
   outline: 1px dotted red;
@@ -24,13 +24,19 @@ html, body {
   .content .parameters .coeficients {
     flex-grow: 1;
     outline: 1px dotted  yellow; }
+    .content .parameters .coeficients h3 {
+      margin: 1em; }
   .content .parameters .distribution {
     outline: 1px dotted  gray;
     flex-grow: 1; }
+    .content .parameters .distribution h3 {
+      margin: 1em; }
 
-.content .table {
+.content .grid-wrapper {
   outline: 1px dotted blue;
-  height: 1000px; }
+  width: 1920px; }
+  .content .grid-wrapper .grid {
+    width: 1920px; }
 
 .bar-chart {
   font: 10px sans-serif; }

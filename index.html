@@ -7,24 +7,33 @@
         <!-- BAstrap -->
         <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
         <link href="assets/styles/bastrap.css" rel="stylesheet">
+        <link href="assets/styles/ui-grid.min.css" rel="styleSheet" />
         <link href="app/styles.css" rel="stylesheet">
     </head>
     <body>
         <div class="content" ng-app="dashboard-semaforos" ng-controller="DashboardController as vm">
             <div class="header">
-            
+
                 <div class="logo">
                     
                 </div>
                 <div class="title">
-                        DASHBOARD SEMAFOROS
+                      <h1>DASHBOARD SEMAFOROS</h1>
                 </div>
             </div>
             <div class="parameters">
-                <div class="coeficients"></div>
-                <div class="distribution"></div>
+                <div class="coeficients">
+                    <h3>PARAMETROS</h3>
+                </div>
+                <div class="distribution">
+                    <div ng-include="assets/partials/prestadores.tpl.html" scope="" onload="">
+                    
+                </div>
+                </div>
             </div>
-            <div class="table"></div>
+            <div class="grid-wrapper">
+                  <div ui-grid="{ data: vm.gridData }" class="grid"></div>
+            </div>
         </div>
 
         <!--libs-->
@@ -33,6 +42,7 @@
         <script src="assets/js/d3.v3.min.js"></script>
         <script src="assets/js/d3.tip.v0.6.3.js"></script>
         <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/ui-grid.min.js"></script>
 
         <!--app-->
         <script src="app/app.js"></script>
@@ -42,3 +52,8 @@
         
     </body>
 </html>
+
+
+
+
+
