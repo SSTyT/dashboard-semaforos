@@ -1,6 +1,14 @@
 /* On the flex container */
 
 .zone-picker {
+    drag-ul {
+        display: inherit;
+        cursor: move;
+    }
+    drop-div {
+        display: inherit;
+    }
+    
     display: -webkit-flex;
     display: flex;
     .areas {
@@ -41,4 +49,20 @@
             margin: 20px;
         }
     }
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  not supported by any browser */
 }

@@ -81,6 +81,11 @@ bar-chart {
 .zone-picker {
   display: -webkit-flex;
   display: flex; }
+  .zone-picker drag-ul {
+    display: inherit;
+    cursor: move; }
+  .zone-picker drop-div {
+    display: inherit; }
   .zone-picker .areas {
     display: -webkit-flex;
     display: flex;
@@ -115,3 +120,18 @@ bar-chart {
       height: 175px;
       border: solid 2px #000;
       margin: 20px; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  not supported by any browser */ }

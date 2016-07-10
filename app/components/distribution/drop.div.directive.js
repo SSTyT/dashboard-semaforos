@@ -4,8 +4,25 @@ angular.module('dashboard-semaforos')
     return {
       restrict: 'E',
       templateUrl: 'distribution/drop.html',
-      scope: { name: '=' },
+      scope: { dropzone: '=' },
       controller: 'dropDivCtrl'
     }
   }])
-  .controller('dropDivCtrl', ['$scope', '$element', function barChartCtrl($scope, $element) {}]);
+  .controller('dropDivCtrl', ['$scope', '$element', '$rootScope', function barChartCtrl($scope, $element, $rootScope) {
+
+    function handleDrop(e) {
+
+      $rootScope.$broadcast('drop', { target: $scope.dropzone, source: e.dataTransfer.getData('data') });
+
+    }
+
+    function handleDragOver(e) {
+      e.dataTransfer.dropEffect = 'move';
+      // allows us to drop
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+    }
+
+    $element[0].addEventListener('dragover', handleDragOver, false);
+    $element[0].addEventListener('drop', handleDrop, false);
+  }]);
