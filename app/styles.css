@@ -4,6 +4,37 @@ body {
   width: 100%;
   background: none; }
 
+.header {
+  background: #1D1C1A;
+  height: 10%;
+  display: flex; }
+  .header .title {
+    color: #FDD306;
+    font-size: 2em;
+    padding: 1em;
+    letter-spacing: 6px !important; }
+
+.parameters {
+  outline: 1px dotted red;
+  display: flex; }
+  .parameters .coeficients {
+    width: 20%;
+    flex-grow: 1;
+    outline: 1px dotted  yellow; }
+    .parameters .coeficients h3 {
+      margin: 1em; }
+  .parameters .distribution {
+    outline: 1px dotted  gray;
+    flex-grow: 3; }
+    .parameters .distribution h3 {
+      margin: 1em; }
+
+.grid-wrapper {
+  outline: 1px dotted blue;
+  width: 1920px; }
+  .grid-wrapper .grid {
+    width: 1920px; }
+
 .content .header {
   background: #1D1C1A;
   height: 5%;
@@ -137,6 +168,15 @@ bar-chart {
         .zone-picker .drop-container .dropzone .area a {
           color: white;
           cursor: pointer; }
+
+.charts {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -webkit-justify-content: center;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
 
 .noselect {
   -webkit-touch-callout: none;

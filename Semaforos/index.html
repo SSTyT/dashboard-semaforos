@@ -8,33 +8,11 @@
     <!--<link href="styles/bastrap.css" rel="stylesheet" />-->
     <link href="styles/presentacion.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
+
+
     
     
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".draggable").draggable({
-                stop: function (event, ui) {
-                    actualizarDatos(); // just get pos.top and pos.left
-                }
-            });
-            actualizarDatos();
-        });
-        function actualizarDatos() {
-            $('#tblItems tr').each(function () {
-                console.log(this.id.toString().split('-')[1])
-                actualizarFila(this.id.split('-')[1]);
-            });
-        }
-        function actualizarFila(id) {
-            $("#presupuesto-" + id.toString()).val();
-        }
-        function decodeFormat(number) {
-            return parseFloat(number.toString().replace(/,/g, ''));
-        }
-    </script>
+
     <style>
         .droppable {
             margin: 5px;
@@ -128,42 +106,18 @@
             <div class="content-loader">
                 <table class="" id="tblItems">
                     <tr>
-                        <td>
-                            EMPRESA
-                        </td>
-                        <td>
-                            RUBRO
-                        </td>
-                        <td>
-                            SUBRUBRO
-                        </td>
-                        <td>
-                            DESCRIPCIÓN
-                        </td>
-                        <td>
-                            SUBITEM
-                        </td>
-                        <td>
-                            U.M.
-                        </td>
-                        <td>
-                            CANTIDAD
-                        </td>
-                        <td>
-                            P. UNIT
-                        </td>
-                        <td>
-                            PRESUP. 2010
-                        </td>
-                        <td>
-                            AJUSTE
-                        </td>
-                        <td>
-                            NUEVO PRECIO ESTIMADO
-                        </td>
-                        <td>
-                            RESULTADO
-                        </td>
+                        <td>EMPRESA</td>
+                        <td>RUBRO</td>
+                        <td>SUBRUBRO</td>
+                        <td>DESCRIPCIÓN </td>
+                        <td>SUBITEM</td>
+                        <td>U.M.</td>
+                        <td>CANTIDAD</td>
+                        <td>P. UNIT</td>
+                        <td>PRESUP. 2010</td>
+                        <td>AJUSTE</td>
+                        <td>NUEVO PRECIO ESTIMADO</td>
+                        <td>RESULTADO</td>
                   </tr>
                     <tr id=tr-1>                      <td>                          <input type="text" id="emp1" readonly="readonly" value="1-SWARCO" /> </td><td>  <input type="text" id="rubro-1" readonly="readonly" value="RUBRO A" />  </td><td><input type="text" id="subrubro-1" readonly="readonly" value="MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES" />  </td><td><input type="text" id="descripcion-1" readonly="readonly" value="Instalación Tipo 1" /> </td><td><input type="text" id="subitem-1" readonly="readonly" value="" /></td><td><input type="text" id="um-1" readonly="readonly" value="[un]" /></td> <td><input type="text" id="cantidad-1" value="11482" />  </td> <td>  <input type="text" id="unitario-1" value="369.05" />   </td><td><input type="text" id="presupuesto-1" value="" /></td><td>       <input type="text" id="ajuste-Instalación Tipo 1" value="" />                      </td>     <td>  <input type="text" id="nprecio- 1" value="" />    </td>                      <td>                             <input type="text" id="resultado-1" value="" /> </td> </tr>
                     <tr id=tr-2>                      <td>                          <input type="text" id="emp2" readonly="readonly" value="1-SWARCO" /> </td><td>  <input type="text" id="rubro-2" readonly="readonly" value="RUBRO A" />  </td><td><input type="text" id="subrubro-2" readonly="readonly" value="MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES" />  </td><td><input type="text" id="descripcion-2" readonly="readonly" value="Instalación Tipo 2" /> </td><td><input type="text" id="subitem-2" readonly="readonly" value="" /></td><td><input type="text" id="um-2" readonly="readonly" value="[un]" /></td> <td><input type="text" id="cantidad-2" value="7726" />  </td> <td>  <input type="text" id="unitario-2" value="525.03" />   </td><td><input type="text" id="presupuesto-2" value="" /></td><td>       <input type="text" id="ajuste-Instalación Tipo 2" value="" />                      </td>     <td>  <input type="text" id="nprecio- 2" value="" />    </td>                      <td>                             <input type="text" id="resultado-2" value="" /> </td> </tr>
@@ -532,6 +486,31 @@
             </div>
         </div>
     </footer>-->
- 
+     <script src="Scripts/jquery-2.2.0.js"></script>
+<!--          <script type="text/javascript">
+        $(document).ready(function () {
+            $(".draggable").draggable({
+                stop: function (event, ui) {
+                    actualizarDatos(); // just get pos.top and pos.left
+                }
+            });
+            actualizarDatos();
+        });
+        function actualizarDatos() {
+            $('#tblItems tr').each(function () {
+                console.log(this.id.toString().split('-')[1])
+                actualizarFila(this.id.split('-')[1]);
+            });
+        }
+        function actualizarFila(id) {
+            $("#presupuesto-" + id.toString()).val();
+        }
+        function decodeFormat(number) {
+            return parseFloat(number.toString().replace(/,/g, ''));
+        }
+    </script>
+ -->   
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/tools.js"></script>
 </body>
 </html>
