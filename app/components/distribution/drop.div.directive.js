@@ -10,10 +10,10 @@ angular.module('dashboard-semaforos')
   }])
   .controller('dropDivCtrl', ['$scope', '$element', '$rootScope', function barChartCtrl($scope, $element, $rootScope) {
 
+    $scope.zone = 'zone' + $scope.dropzone.name;
+
     function handleDrop(e) {
-
       $rootScope.$broadcast('drop', { target: $scope.dropzone, source: e.dataTransfer.getData('data') });
-
     }
 
     function handleDragOver(e) {
@@ -23,6 +23,6 @@ angular.module('dashboard-semaforos')
       if (e.stopPropagation) e.stopPropagation();
     }
 
-    $element[0].addEventListener('dragover', handleDragOver, false);
-    $element[0].addEventListener('drop', handleDrop, false);
+    $element.find('div.dropzone')[0].addEventListener('dragover', handleDragOver, false);
+    $element.find('div.dropzone')[0].addEventListener('drop', handleDrop, false);
   }]);

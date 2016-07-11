@@ -14,8 +14,8 @@ angular.module('dashboard-semaforos')
 
     //Definicion de areas y ejes
     var margin = { top: 40, right: 20, bottom: 30, left: 80 },
-      width = 500 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom;
+      width = 450 - margin.left - margin.right,
+      height = 350 - margin.top - margin.bottom;
 
     var x = d3.scale.ordinal()
       .rangeRoundBands([0, width], .1);
@@ -31,7 +31,7 @@ angular.module('dashboard-semaforos')
       .scale(y)
       .orient('left');
 
-    var z = d3.scale.category20c();
+    var z = d3.scale.category10();
 
     var tip = d3.tip()
       .attr('class', 'd3-tip')

@@ -1,35 +1,36 @@
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   background: none; }
 
 .content .header {
   background: #1D1C1A;
-  height: 10%;
+  height: 5%;
   display: flex; }
   .content .header .logo {
-    background: url("/assets/img/bac-header.png");
+    background: url("../assets/img/bac-footer.png");
     height: 45px;
-    width: 272px; }
+    width: 255px;
+    margin: 15px; }
   .content .header .title {
     color: #FDD306;
     font-size: 2em;
     padding: 1em;
     letter-spacing: 6px !important; }
 
-.content .parameters {
+.content .content-body {
   outline: 1px dotted red;
   display: flex; }
-  .content .parameters .coeficients {
-    width: 20%;
+  .content .content-body .coeficients {
     flex-grow: 1;
-    outline: 1px dotted  yellow; }
-    .content .parameters .coeficients h3 {
+    outline: 1px dotted yellow; }
+    .content .content-body .coeficients h3 {
       margin: 1em; }
-  .content .parameters .distribution {
-    outline: 1px dotted  gray;
+  .content .content-body .distribution {
+    outline: 1px dotted gray;
     flex-grow: 3; }
-    .content .parameters .distribution h3 {
+    .content .content-body .distribution h3 {
       margin: 1em; }
 
 .content .grid-wrapper {
@@ -77,7 +78,24 @@ bar-chart {
     top: 100%;
     left: 0; }
 
-/* On the flex container */
+.zone1 {
+  border-color: #1f77b4 !important; }
+
+.zone2 {
+  border-color: #ff7f0e !important; }
+
+.zone3 {
+  border-color: #2ca02c !important; }
+
+.zone4 {
+  border-color: #d62728 !important; }
+
+.zone5 {
+  border-color: #9467bd !important; }
+
+.zone6 {
+  border-color: #8c564b !important; }
+
 .zone-picker {
   display: -webkit-flex;
   display: flex; }
@@ -89,36 +107,23 @@ bar-chart {
   .zone-picker .areas {
     display: -webkit-flex;
     display: flex;
-    width: 450px;
+    flex-grow: 1;
     height: 460px;
     padding: 15px; }
     .zone-picker .areas .list-group {
-      width: 100%; }
+      width: 165px; }
   .zone-picker .drop-container {
-    width: 70%;
-    padding: 0 30px;
+    flex-grow: 1;
     display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
-    align-items: center;
+    -webkit-align-items: flex-start;
     -webkit-justify-content: center;
-    justify-content: center;
-    /* You can set flex-wrap and flex-direction individually */
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    /* Or do it all in one line with flex flow */
     -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    /* tweak the where items line up on the row */
-    /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
-    -webkit-align-content: flex-end;
-    align-content: flex-end; }
+    flex-flow: row wrap; }
     .zone-picker .drop-container .dropzone {
-      width: 250px;
-      height: 175px;
-      border: solid 2px #000;
+      width: 200px;
+      height: 150px;
+      border: solid 2px;
       margin: 20px; }
 
 .noselect {

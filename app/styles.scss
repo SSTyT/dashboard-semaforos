@@ -1,54 +1,54 @@
-html,body,{
-	height:100%;
-	width:100%;
-	background:none;
+html,
+body,
+{
+    height: 100%;
+    width: 100%;
+    background: none;
 }
-.content{
 
-	.header{
-		background:#1D1C1A;
-		height: 10%;
-		display: flex;
-		.logo{
-			background: url('/assets/img/bac-header.png');
-			height:45px;
-			width: 272px;
-		}
-		.title{
-			color:#FDD306;
-			font-size: 2em;
-			padding:1em;
-		    letter-spacing: 6px!important;
-		}
-	}
-	
-	.parameters{
-		outline: 1px dotted red;
-		display: flex;
-		.coeficients{
-			width:20%;
-			flex-grow: 1;
-			outline: 1px dotted  yellow;
-			h3{
-				margin:1em;
-			}
-		}
-		.distribution{
-			outline: 1px dotted  gray;
-			flex-grow: 3;
-			h3{
-				margin:1em;
-			}
-		}
-	}
-	.grid-wrapper{
-		outline: 1px dotted blue;
-		width: 1920px;
-		.grid{
-			width: 1920px;
-			
-		}
-	}
+.content {
+    .header {
+        background: #1D1C1A;
+        height: 5%;
+        display: flex;
+        .logo {
+            background: url('../assets/img/bac-footer.png');
+            height: 45px;
+            width: 255px;
+            margin: 15px;
+        }
+        .title {
+            color: #FDD306;
+            font-size: 2em;
+            padding: 1em;
+            letter-spacing: 6px!important;
+        }
+    }
+    .content-body {
+        outline: 1px dotted red;
+        display: flex;
+        .coeficients {
+            flex-grow: 1;
+            outline: 1px dotted yellow;
+            h3 {
+                margin: 1em;
+            }
+        }
+        .distribution {
+            outline: 1px dotted gray;
+            flex-grow: 3;
+            h3 {
+                margin: 1em;
+            }
+        }
+    }
+    .grid-wrapper {
+        outline: 1px dotted blue;
+        width: 1920px;
+        .grid {
+            width: 1920px;
+        }
+    }
 }
 
 //imports
