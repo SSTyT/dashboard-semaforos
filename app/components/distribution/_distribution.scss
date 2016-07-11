@@ -1,4 +1,26 @@
-/* On the flex container */
+.zone1 {
+    border-color: #1f77b4 !important;
+}
+
+.zone2 {
+    border-color: #ff7f0e !important;
+}
+
+.zone3 {
+    border-color: #2ca02c !important;
+}
+
+.zone4 {
+    border-color: #d62728 !important;
+}
+
+.zone5 {
+    border-color: #9467bd !important;
+}
+
+.zone6 {
+    border-color: #8c564b !important;
+}
 
 .zone-picker {
     drag-ul {
@@ -8,44 +30,30 @@
     drop-div {
         display: inherit;
     }
-    
     display: -webkit-flex;
     display: flex;
     .areas {
         display: -webkit-flex;
         display: flex;
-        width: 450px;
+        flex-grow: 1;
         height: 460px;
         padding: 15px;
         .list-group {
-            width: 100%
+            width: 165px;
         }
     }
     .drop-container {
-        width: 70%;
-        padding: 0 30px;
+        flex-grow: 1;
         display: -webkit-flex;
         display: flex;
-        -webkit-align-items: center;
-        align-items: center;
+        -webkit-align-items: flex-start;
         -webkit-justify-content: center;
-        justify-content: center;
-        /* You can set flex-wrap and flex-direction individually */
-        -webkit-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
-        /* Or do it all in one line with flex flow */
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
-        /* tweak the where items line up on the row */
-        /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
-        -webkit-align-content: flex-end;
-        align-content: flex-end;
         .dropzone {
-            width: 250px;
-            height: 175px;
-            border: solid 2px #000;
+            width: 200px;
+            height: 150px;
+            border: solid 2px;
             margin: 20px;
         }
     }

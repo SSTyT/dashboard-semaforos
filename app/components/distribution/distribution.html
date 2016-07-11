@@ -1,10 +1,18 @@
-<div class="zone-picker" ng-controller="DistributionCtrl">
-    <div class="areas">
-        <ul class="list-group">
-            <drag-ul ng-repeat="area in areas" data="area"></drag-ul>
-        </ul>
+<div ng-controller="DistributionCtrl">
+    <div class="zone-picker">
+        <div class="areas">
+            <ul class="list-group">
+                <drag-ul ng-repeat="area in areas" data="area"></drag-ul>
+            </ul>
+        </div>
+        <div class="drop-container">
+            <drop-div dropzone="zone" ng-repeat="zone in dropzones"></drop-div>
+        </div>
     </div>
-    <div class="drop-container">
-        <drop-div dropzone="zone" ng-repeat="zone in dropzones"></drop-div>
+    <div class="charts">
+    	<bar-chart id="global" chartData="fake"></bar-chart>
+    	<bar-chart id="rubroA" chartData="fake"></bar-chart>
+    	<bar-chart id="rubroB" chartData="fake"></bar-chart>
+    	<bar-chart id="rubroC" chartData="fake"></bar-chart>
     </div>
 </div>
