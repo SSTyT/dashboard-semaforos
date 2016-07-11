@@ -124,7 +124,19 @@ bar-chart {
       width: 200px;
       height: 150px;
       border: solid 2px;
-      margin: 20px; }
+      margin: 20px;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-content: flex-start;
+      -webkit-align-items: flex-start;
+      -webkit-justify-content: flex-start;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap; }
+      .zone-picker .drop-container .dropzone .area {
+        margin: 5px; }
+        .zone-picker .drop-container .dropzone .area a {
+          color: white;
+          cursor: pointer; }
 
 .noselect {
   -webkit-touch-callout: none;

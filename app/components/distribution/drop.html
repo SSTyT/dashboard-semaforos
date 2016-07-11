@@ -1,4 +1,7 @@
 <div>
-	<span>Zona {{dropzone.name}}</span>
-    <div ng-class="zone" class="dropzone"></div>
+    <span>Zona {{dropzone.name}}</span>
+    <div ng-class="zone" class="dropzone">
+        <span ng-repeat="area in dropzone.areas" class="area label label-info">{{area.name}} <a><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+        </span>
+    </div>
 </div>
