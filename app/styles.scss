@@ -34,6 +34,13 @@ body,
             h3 {
                 margin: 1em;
             }
+
+            .rubro{
+            	.subrubro{
+            		padding-left: 2em;
+            		// outline: red dotted 2px;
+            	}
+            }
         }
         .distribution {
             outline: 1px dotted gray;
@@ -46,10 +53,8 @@ body,
     .grid-wrapper {
         outline: 1px dotted blue;
         width: 1920px;
-        height: 500px;
         .grid {
             width: 1920px;
-        	height: 500px;
         }
     }
 }

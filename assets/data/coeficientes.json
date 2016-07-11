@@ -1,83 +1,60 @@
-{
-	id:"0",
-	label:"general",
-	coeficiente:0.0,
-	children:{
-		{
-			id:"1",
-			label:"1 - CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS:",
-			coeficiente:0.0,
-			children:{}
-		},
-		{
-			id:"2",
-			label:"2 - DAÑOS, TRASLADOS Y REMODELACIONES",
-			coeficiente:0.0,
-			children:{}
-		},
-
-		{
-			id:"3",
-			label:"3 - IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO",
-			coeficiente:0.0,
-			children:{}
-		},
-		{
-			id:"4",
-			label:"4 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS"
-			coeficiente:0.0,
-			children:{}
-		},
-		{
-			id:"5",
-			label:"5 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO",
-			coeficiente:0.0,
-			children:{}
-		},
-		{
-			id:"6",
-			label:"6 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES",
-			coeficiente:0.0,
-			children:{}
-		},
-		{
-			id:"7",
-			label:"7 - MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO",
-			coeficiente:0.0,
-			children:{}
-		},
-		{
-			id:"8",
-			label:"8 - OBRAS VARIAS Y ACTIVIDADES RESTANTES",
-			coeficiente:0.0,
-			children:{}
-		},
-		{
-			id:"9",
-			label:"9 - REPARACIÓN DE EQUIPOS CONTROLADORES",
-			coeficiente:0.0,
-			children:{}
-		},
-
-	
-	}
+{  
+   "GENERAL":{  
+      "value":0,
+      "id":"GENERAL"
+   },
+   "RUBRO A":{  
+      "value":0,
+      "id":"RUBRO A",
+      "SUBRUBROS":{  
+         "MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES":{  
+            "value":0,
+            "id":"MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES"
+         },
+         "MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO":{  
+            "value":0,
+            "id":"MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO"
+         }
+      }
+   },
+   "RUBRO B":{  
+      "value":0,
+      "id":"RUBRO B",
+      "SUBRUBROS":{  
+         "MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS":{  
+            "value":0,
+            "id":"MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS"
+         },
+         "MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO":{  
+            "value":0,
+            "id":"MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO"
+         },
+         "IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO":{  
+            "value":0,
+            "id":"IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO"
+         }
+      }
+   },
+   "RUBRO C":{  
+      "value":0,
+      "id":"RUBRO C",
+      "SUBRUBROS":{  
+         "CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS":{  
+            "value":0,
+            "id":"CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS"
+         },
+         "DAÑOS, TRASLADOS Y REMODELACIONES":{  
+            "value":0,
+            "id":"DAÑOS, TRASLADOS Y REMODELACIONES"
+         },
+         "REPARACIÓN DE EQUIPOS CONTROLADORES":{  
+            "value":0,
+            "id":"REPARACIÓN DE EQUIPOS CONTROLADORES"
+         },
+         "OBRAS VARIAS Y ACTIVIDADES RESTANTES":{  
+            "value":0,
+            "id":"OBRAS VARIAS Y ACTIVIDADES RESTANTES"
+         }
+      }
+   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

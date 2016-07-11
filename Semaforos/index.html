@@ -71,6 +71,14 @@
                 <input type="text" class="form-control" id="coefAjuste33" placeholder="Coef. Ajust" />
                 9 - REPARACIÓN DE EQUIPOS CONTROLADORES
                 <input type="text" class="form-control" id="coefAjuste34" placeholder="Coef. Ajust" />
+            
+
+            <div ng-repeat="(key, rubro) in coeficientes">
+                    {{rubro.id}}
+                    <input type="number" name="rubro.id" ng-model="rubro.value" placeholder="rubro.id">
+                    
+            </div>
+
             </div>
             <div class="col-md-8">
                 <table>

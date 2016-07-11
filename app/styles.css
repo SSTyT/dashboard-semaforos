@@ -27,6 +27,8 @@ body {
     outline: 1px dotted yellow; }
     .content .content-body .coeficients h3 {
       margin: 1em; }
+    .content .content-body .coeficients .rubro .subrubro {
+      padding-left: 2em; }
   .content .content-body .distribution {
     outline: 1px dotted gray;
     flex-grow: 3; }
@@ -35,11 +37,9 @@ body {
 
 .content .grid-wrapper {
   outline: 1px dotted blue;
-  width: 1920px;
-  height: 500px; }
+  width: 1920px; }
   .content .grid-wrapper .grid {
-    width: 1920px;
-    height: 500px; }
+    width: 1920px; }
 
 bar-chart {
   font: 10px sans-serif; }

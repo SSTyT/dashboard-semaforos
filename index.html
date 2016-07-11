@@ -24,7 +24,7 @@
         <div class="content-body">
             <div class="coeficients">
                 <h3>Coficientes</h3>
-                <input type="text" class="form-control" id="coefAjuste" placeholder="Coef. Ajust">
+              <!--   <input type="text" class="form-control" id="coefAjuste" placeholder="Coef. Ajust">
                 <input type="text" class="form-control" id="coefAjusteA" placeholder="Coef. Ajust Rubro A">
                 <input type="text" class="form-control" id="coefAjusteB" placeholder="Coef. Ajust Rubro B">
                 <input type="text" class="form-control" id="coefAjusteC" placeholder="Coef. Ajust Rubro C">
@@ -45,7 +45,20 @@
                 <h6>8 - OBRAS VARIAS Y ACTIVIDADES RESTANTES</h6>
                 <input type="text" class="form-control" id="coefAjuste33" placeholder="Coef. Ajust">
                 <h6>9 - REPARACIÓN DE EQUIPOS CONTROLADORES</h6>
-                <input type="text" class="form-control" id="coefAjuste34" placeholder="Coef. Ajust">
+                <input type="text" class="form-control" id="coefAjuste34" placeholder="Coef. Ajust"> -->
+
+
+
+
+            <div class="rubro" ng-repeat="(key, rubro) in coeficientes">
+                    <h6>{{rubro.id}}</h6>
+                    <input type="number" name="{{rubro.id}}"  class="form-control" ng-change="rubroCambio(rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
+                    <div class="subrubro" ng-repeat="(subrubro_key, subrubro) in rubro.SUBRUBROS">
+                        <h6>{{subrubro.id}}</h6>
+                        <input type="number" name="{{subrubro.id}}"  class="form-control" ng-change="subrubroCambio(subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
+                    </div>
+                    
+            </div>
             </div>
             <div class="distribution">
                 <h3>Distribución de Áreas</h3>
@@ -54,7 +67,7 @@
             </div>
         </div>
         <div class="grid-wrapper">
-            <div ui-grid="{ data: vm.gridData }" class="grid"></div>
+            <div ui-grid="grid" ui-grid-edit  ui-grid-row-edit ui-grid-cellNav class="grid"></div>
         </div>
     </div>
     <div class="table"></div>
