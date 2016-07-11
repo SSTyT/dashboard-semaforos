@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dashboard-semaforos', ['ui.grid'])
+angular.module('dashboard-semaforos', ['templates', 'ui.grid'])
   .config(function() {
 
   });

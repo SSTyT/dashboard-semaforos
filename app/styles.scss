@@ -25,8 +25,8 @@ html,body,{
 	.parameters{
 		outline: 1px dotted red;
 		display: flex;
-		height: 400px;
 		.coeficients{
+			width:20%;
 			flex-grow: 1;
 			outline: 1px dotted  yellow;
 			h3{
@@ -35,7 +35,7 @@ html,body,{
 		}
 		.distribution{
 			outline: 1px dotted  gray;
-			flex-grow: 1;
+			flex-grow: 3;
 			h3{
 				margin:1em;
 			}
@@ -53,3 +53,4 @@ html,body,{
 
 //imports
 @import "components/barchart/barchart";
+@import "components/distribution/distribution";

@@ -2,20 +2,20 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
-//var templateCache = require('gulp-angular-templatecache');
+var templateCache = require('gulp-angular-templatecache');
 
 var paths = {
   sass: ['./app/*.scss', './app/components/**/*.scss', './www/shared/**/*.scss'],
-  //templates: ['./www/*.html', './www/modules/**/*.html', './www/core/**/*.html']
+  templates: ['./app/*.html', './app/components/**/*.html', './app/shared/**/*.html']
 };
 
-gulp.task('default', ['sass', /*'template-cache',*/ 'watch']);
+gulp.task('default', ['sass', 'template-cache', 'watch']);
 
-/*gulp.task('template-cache', function() {
+gulp.task('template-cache', function() {
   return gulp.src(paths.templates)
     .pipe(templateCache({ standalone: true }))
-    .pipe(gulp.dest('./www/core'));
-});*/
+    .pipe(gulp.dest('./app/shared'));
+});
 
 gulp.task('sass', function(done) {
   gulp.src('./app/styles.scss')
@@ -32,5 +32,5 @@ gulp.task('sass', function(done) {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
-  //gulp.watch(paths.templates, ['template-cache']);
+  gulp.watch(paths.templates, ['template-cache']);
 });

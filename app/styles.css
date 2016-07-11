@@ -15,16 +15,16 @@ html, body {
 
 .content .parameters {
   outline: 1px dotted red;
-  display: flex;
-  height: 400px; }
+  display: flex; }
   .content .parameters .coeficients {
+    width: 20%;
     flex-grow: 1;
     outline: 1px dotted  yellow; }
     .content .parameters .coeficients h3 {
       margin: 1em; }
   .content .parameters .distribution {
     outline: 1px dotted  gray;
-    flex-grow: 1; }
+    flex-grow: 3; }
     .content .parameters .distribution h3 {
       margin: 1em; }
 
@@ -36,6 +36,9 @@ html, body {
 
 bar-chart {
   font: 10px sans-serif; }
+  bar-chart .bar-text {
+    font: 18px sans-serif;
+    fill: #FFF; }
   bar-chart .axis path,
   bar-chart .axis line {
     fill: none;
@@ -69,3 +72,62 @@ bar-chart {
     margin: -2px 0 0 0;
     top: 100%;
     left: 0; }
+
+/* On the flex container */
+.zone-picker {
+  display: -webkit-flex;
+  display: flex; }
+  .zone-picker drag-ul {
+    display: inherit;
+    cursor: move; }
+  .zone-picker drop-div {
+    display: inherit; }
+  .zone-picker .areas {
+    display: -webkit-flex;
+    display: flex;
+    width: 450px;
+    height: 460px;
+    padding: 15px; }
+    .zone-picker .areas .list-group {
+      width: 100%; }
+  .zone-picker .drop-container {
+    width: 70%;
+    padding: 0 30px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    /* You can set flex-wrap and flex-direction individually */
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* Or do it all in one line with flex flow */
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    /* tweak the where items line up on the row */
+    /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+    -webkit-align-content: flex-end;
+    align-content: flex-end; }
+    .zone-picker .drop-container .dropzone {
+      width: 250px;
+      height: 175px;
+      border: solid 2px #000;
+      margin: 20px; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  not supported by any browser */ }
