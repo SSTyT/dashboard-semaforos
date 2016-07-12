@@ -26,10 +26,10 @@
                 <h3>Coficientes</h3>
                 <div class="rubro" ng-repeat="(key, rubro) in coeficientes">
                     <h6>{{rubro.id}}</h6>
-                    <input type="number" name="{{rubro.id}}"  class="form-control" ng-change="updateRowsMatching('RUBRO',rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
+                    <input type="number" name="{{rubro.id}}"  class="form-control" ng-enter="updateRowsMatching('RUBRO',rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
                     <div class="subrubro" ng-repeat="(subrubro_key, subrubro) in rubro.subrubro">
                         <h6>{{subrubro.id}}</h6>
-                        <input type="number" name="{{subrubro.id}}"  class="form-control" ng-change="updateRowsMatching('SUBRUBRO',subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
+                        <input type="number" name="{{subrubro.id}}"  class="form-control" ng-enter="updateRowsMatching('SUBRUBRO',subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
                     </div>                
             </div>
             </div>
@@ -51,10 +51,14 @@
     <script src="assets/js/d3.v3.js"></script>
     <script src="assets/js/d3.tip.v0.6.3.js"></script>
     <script src="assets/js/angular.min.js"></script>
+
+
+
     <script src="assets/js/ui-grid.min.js"></script>
     <!--app-->
     <script src="app/shared/templates.js"></script>
     <script src="app/app.js"></script>
+    <script src="assets/js/ng-enter.directive.js"></script>
     <script src="app/components/barchart/barchart.directive.js"></script>
     <script src="app/components/distribution/distribution.controller.js"></script>
     <script src="app/components/distribution/drag.ul.directive.js"></script>
