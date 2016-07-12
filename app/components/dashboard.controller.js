@@ -1,7 +1,7 @@
 'use strict';
-angular.module('dashboard-semaforos').controller('DashboardController', ['$scope','$q','DataOriginService', DashboardController])
+angular.module('dashboard-semaforos').controller('DashboardController', ['$scope', '$rootScope', '$q', 'DataOriginService', DashboardController])
 
-function DashboardController($scope,$q,DataOriginService) {
+function DashboardController($scope, $rootScope, $q, DataOriginService) {
 
 
   var vm = this;
@@ -33,18 +33,17 @@ RESULTADO
           { name:'Precio 2010', field: 'p2010' ,enableCellEdit: false},
           { name:'Ajuste', field: 'AJUSTE'},
           { name:'Estimado', field: 'NPE'},
-          { name:'Resultado', field: 'RESULTADO' ,enableCellEdit: false}
-                  ],
+          { name:'Resultado', field: 'RESULTADO' ,enableCellEdit: false}                  ],
         data:[]
   };
 
 
-  $scope.grid.onRegisterApi = function(gridApi){
+  $scope.grid.onRegisterApi = function(gridApi) {
     //set gridApi on scope
     $scope.gridApi = gridApi;
     gridApi.rowEdit.on.saveRow($scope, $scope.saveRow);
   };
- 
+
   DataOriginService.getTable().then(function successCallback(response) {
     console.log(response);
     $scope.grid.data = response;
@@ -61,54 +60,59 @@ RESULTADO
     console.log(response);
   });
 
-  $scope.saveRow =function (row){
+  $scope.saveRow = function(row) {
     console.log(row);
-    row.p2010=row.precioUnitario*row.CANTIDAD;
+    row.p2010 = row.precioUnitario * row.CANTIDAD;
     evalAndUpdate(row);
 
     var promise = $q.defer();
-    $scope.gridApi.rowEdit.setSavePromise( row, promise.promise );
+    $scope.gridApi.rowEdit.setSavePromise(row, promise.promise);
     promise.resolve();
   }
 
-  $scope.grid.onRegisterApi = function(gridApi){
+  $scope.grid.onRegisterApi = function(gridApi) {
     //set gridApi on scope
     $scope.gridApi = gridApi;
     gridApi.rowEdit.on.saveRow($scope, $scope.saveRow);
   };
 
-  $scope.updateRowsMatching = function updateRowsMatching(field,value){
-    var rows  = $scope.grid.data;
-    console.log(field + ""+ value);
-    for (var i = rows.length - 1; i >= 0; i--){
-        if (value.id == "GENERAL" || rows[i][field] == value.id ){
-          console.log("match row: "+i);
-          evalAndUpdate(rows[i]);
-        }
+  $scope.updateRowsMatching = function updateRowsMatching(field, value) {
+    var rows = $scope.grid.data;
+    console.log(field + "" + value);
+    for (var i = rows.length - 1; i >= 0; i--) {
+      if (value.id == "GENERAL" || rows[i][field] == value.id) {
+        console.log("match row: " + i);
+        evalAndUpdate(rows[i]);
+      }
     }
   }
 
 
-  function evalAndUpdate(row)
-  {
-    if (row.NPE !== "")
-      { row.RESULTADO = row.NPE; }
-    else if (row.AJUSTE !== "")
-      { row.RESULTADO = row.AJUSTE * row.p2010; }
+
+  function evalAndUpdate(row){
+      if (row.NPE !== "")
+        { row.RESULTADO = row.NPE; }
+      else if (row.AJUSTE !== "")
+        { row.RESULTADO = row.AJUSTE * row.p2010; }
+      
+      else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== ""))
+        { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; }
+      
+      else if (($scope.coeficientes[row.RUBRO].value !== ""))
+        { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; }
+      
+      else if ($scope.coeficientes["GENERAL"].value !== "")
+        { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; }
+      
+      else
+        { row.RESULTADO = ""; }
+
+      $rootScope.$broadcast('grid-change', $scope.grid.data);
     
-    else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== ""))
-      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; }
-    
-    else if (($scope.coeficientes[row.RUBRO].value !== ""))
-      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; }
-    
-    else if ($scope.coeficientes["GENERAL"].value !== "")
-      { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; }
-    
-    else
-      { row.RESULTADO = ""; }
+
   }
   console.log("READY!");
+
 }
 
 
@@ -130,7 +134,7 @@ condiciones  orden
     
 */
 
-  /*
+/*
 EMPRESA
 RUBRO
 SUBRUBRO
