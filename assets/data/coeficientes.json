@@ -1,58 +1,58 @@
 {  
    "GENERAL":{  
-      "value":0,
+      "value":"",
       "id":"GENERAL"
    },
    "RUBRO A":{  
-      "value":0,
+      "value":"",
       "id":"RUBRO A",
-      "SUBRUBROS":{  
+      "subrubro":{  
          "MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES":{  
-            "value":0,
+            "value":"",
             "id":"MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES"
          },
          "MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO":{  
-            "value":0,
+            "value":"",
             "id":"MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO"
          }
       }
    },
    "RUBRO B":{  
-      "value":0,
+      "value":"",
       "id":"RUBRO B",
-      "SUBRUBROS":{  
+      "subrubro":{  
          "MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS":{  
-            "value":0,
+            "value":"",
             "id":"MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS"
          },
          "MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO":{  
-            "value":0,
+            "value":"",
             "id":"MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO"
          },
          "IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO":{  
-            "value":0,
+            "value":"",
             "id":"IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO"
          }
       }
    },
    "RUBRO C":{  
-      "value":0,
+      "value":"",
       "id":"RUBRO C",
-      "SUBRUBROS":{  
+      "subrubro":{  
          "CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS":{  
-            "value":0,
+            "value":"",
             "id":"CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS"
          },
          "DAÑOS, TRASLADOS Y REMODELACIONES":{  
-            "value":0,
+            "value":"",
             "id":"DAÑOS, TRASLADOS Y REMODELACIONES"
          },
          "REPARACIÓN DE EQUIPOS CONTROLADORES":{  
-            "value":0,
+            "value":"",
             "id":"REPARACIÓN DE EQUIPOS CONTROLADORES"
          },
          "OBRAS VARIAS Y ACTIVIDADES RESTANTES":{  
-            "value":0,
+            "value":"",
             "id":"OBRAS VARIAS Y ACTIVIDADES RESTANTES"
          }
       }

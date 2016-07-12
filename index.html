@@ -24,40 +24,13 @@
         <div class="content-body">
             <div class="coeficients">
                 <h3>Coficientes</h3>
-              <!--   <input type="text" class="form-control" id="coefAjuste" placeholder="Coef. Ajust">
-                <input type="text" class="form-control" id="coefAjusteA" placeholder="Coef. Ajust Rubro A">
-                <input type="text" class="form-control" id="coefAjusteB" placeholder="Coef. Ajust Rubro B">
-                <input type="text" class="form-control" id="coefAjusteC" placeholder="Coef. Ajust Rubro C">
-                <h6>1 - CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS</h6>
-                <input type="text" class="form-control" id="coefAjuste11" placeholder="Coef. Ajust">
-                <h6>2 - DAÑOS, TRASLADOS Y REMODELACIONES</h6>
-                <input type="text" class="form-control" id="coefAjuste12" placeholder="Coef. Ajust">
-                <h6>3 - IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO</h6>
-                <input type="text" class="form-control" id="coefAjuste21" placeholder="Coef. Ajust">
-                <h6>4 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS</h6>
-                <input type="text" class="form-control" id="coefAjuste22" placeholder="Coef. Ajust">
-                <h6>5 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO</h6>
-                <input type="text" class="form-control" id="coefAjuste23" placeholder="Coef. Ajust">
-                <h6>6 - MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES</h6>
-                <input type="text" class="form-control" id="coefAjuste31" placeholder="Coef. Ajust">
-                <h6>7 - MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO</h6>
-                <input type="text" class="form-control" id="coefAjuste32" placeholder="Coef. Ajust">
-                <h6>8 - OBRAS VARIAS Y ACTIVIDADES RESTANTES</h6>
-                <input type="text" class="form-control" id="coefAjuste33" placeholder="Coef. Ajust">
-                <h6>9 - REPARACIÓN DE EQUIPOS CONTROLADORES</h6>
-                <input type="text" class="form-control" id="coefAjuste34" placeholder="Coef. Ajust"> -->
-
-
-
-
-            <div class="rubro" ng-repeat="(key, rubro) in coeficientes">
+                <div class="rubro" ng-repeat="(key, rubro) in coeficientes">
                     <h6>{{rubro.id}}</h6>
-                    <input type="number" name="{{rubro.id}}"  class="form-control" ng-change="rubroCambio(rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
-                    <div class="subrubro" ng-repeat="(subrubro_key, subrubro) in rubro.SUBRUBROS">
+                    <input type="number" name="{{rubro.id}}"  class="form-control" ng-change="updateRowsMatching('RUBRO',rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
+                    <div class="subrubro" ng-repeat="(subrubro_key, subrubro) in rubro.subrubro">
                         <h6>{{subrubro.id}}</h6>
-                        <input type="number" name="{{subrubro.id}}"  class="form-control" ng-change="subrubroCambio(subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
-                    </div>
-                    
+                        <input type="number" name="{{subrubro.id}}"  class="form-control" ng-change="updateRowsMatching('SUBRUBRO',subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
+                    </div>                
             </div>
             </div>
             <div class="distribution">
