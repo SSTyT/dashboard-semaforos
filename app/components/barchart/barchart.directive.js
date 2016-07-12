@@ -33,14 +33,14 @@ angular.module('dashboard-semaforos')
 
     var z = d3.scale.category10();
 
+    var percentage = d3.format('%');
+
     var tip = d3.tip()
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
-        return '<strong>Monto:</strong> <span>$' + d.y + '</span>';
+        return '<strong></strong> <span>$' + (Math.ceil(d.y)) + ' ('+percentage(d.p)+')</span>';
       })
-
-    var percentage = d3.format('%');
 
     $scope.$watch('chartData', function() {
       if ($scope.chartData) {
@@ -93,7 +93,7 @@ angular.module('dashboard-semaforos')
 
         rects.append('text')
           .text(function(d) {
-            if (d.p > 0) {
+            if (d.p > 0.025) {
               return percentage(d.p);
             }
           })

@@ -6,27 +6,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -35,27 +35,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -64,27 +64,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -93,27 +93,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -122,27 +122,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -151,27 +151,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -180,27 +180,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -209,27 +209,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -238,27 +238,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -267,27 +267,27 @@ angular.module('dashboard-semaforos')
       assigned: false,
       values: {
         A: {
-          amount: 1900,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 700 },
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 1200 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES', amount: 0 },
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO', amount: 0 }
           ]
         },
         B: {
-          amount: 3000,
+          amount: 0,
           subcategories: [
-            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 900 },
-            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 1100 },
-            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 1000 }
+            { name: 'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS', amount: 0 },
+            { name: 'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO', amount: 0 },
+            { name: 'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO', amount: 0 }
           ]
         },
         C: {
-          amount: 5000,
+          amount: 0,
           subcategories: [
-            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 2500 },
-            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 800 },
-            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 700 },
-            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 1000 }
+            { name: 'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS', amount: 0 },
+            { name: 'DAÑOS, TRASLADOS Y REMODELACIONES', amount: 0 },
+            { name: 'REPARACIÓN DE EQUIPOS CONTROLADORES', amount: 0 },
+            { name: 'OBRAS VARIAS Y ACTIVIDADES RESTANTES', amount: 0 }
           ]
         }
       }
@@ -351,6 +351,46 @@ angular.module('dashboard-semaforos')
       refreshGraphs();
     });
 
+    $scope.$on('grid-change', function(event, grid) {
+
+      //reset amounts
+      $scope.areas.forEach(function(area) {
+        area.values.A.amount = 0;
+        area.values.A.subcategories[0].amount = 0;
+        area.values.A.subcategories[1].amount = 0;
+
+        area.values.B.amount = 0;
+        area.values.B.subcategories[0].amount = 0;
+        area.values.B.subcategories[1].amount = 0;
+        area.values.B.subcategories[2].amount = 0;
+
+        area.values.C.amount = 0;
+        area.values.C.subcategories[0].amount = 0;
+        area.values.C.subcategories[1].amount = 0;
+        area.values.C.subcategories[2].amount = 0;
+        area.values.C.subcategories[3].amount = 0;
+      });
+
+
+      grid.forEach(function(row) {
+        var area = $scope.areas.find(function(element) {
+          return element.name === row.EMPRESA;
+        });
+
+        var rubro = row.RUBRO.substr(row.RUBRO.length - 1);
+        area.values[rubro].amount += parseFloat(0 + row.RESULTADO);
+
+        var subcat = area.values[rubro].subcategories.find(function(element) {
+          return element.name === row.SUBRUBRO;
+        });
+
+        subcat.amount += parseFloat(0 + row.RESULTADO);
+
+      });
+
+      refreshGraphs();
+    });
+
     function globalChartData() {
       var out = [];
       var total = 0;
@@ -386,7 +426,6 @@ angular.module('dashboard-semaforos')
     }
 
     function categoryChartData(category) {
-
 
       var out = [];
       var total = 0;
