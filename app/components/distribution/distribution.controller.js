@@ -293,6 +293,25 @@ angular.module('dashboard-semaforos')
       }
     }];
 
+    var subRubros = {
+      A: [
+        'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE INSTALACIONES',
+        'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE EQUIPAMIENTO'
+      ],
+      B: [
+        'MANTENIMIENTO PREVENTIVO Y CORRECTIVO MENSUAL DE COMANDOS DE ÁREA Y SISTEMAS',
+        'MODERNIZACIÓN DE LOS SISTEMAS DE TRÁNSITO',
+        'IMPLANTACIÓN DE NUEVO SISTEMA DE TRÁNSITO'
+      ],
+      C: [
+        'CONSTRUCCIÓN DE NUEVOS CRUCES SEMAFORIZADOS',
+        'DAÑOS, TRASLADOS Y REMODELACIONES',
+        'REPARACIÓN DE EQUIPOS CONTROLADORES',
+        'OBRAS VARIAS Y ACTIVIDADES RESTANTES'
+      ]
+
+    }
+
     $scope.dropzones = [
       { name: "1", areas: [] },
       { name: "2", areas: [] },
@@ -301,6 +320,11 @@ angular.module('dashboard-semaforos')
       { name: "5", areas: [] },
       { name: "6", areas: [] }
     ]
+
+    $scope.globalChartData = globalChartData();
+    $scope.aChartData = categoryChartData('A');
+    $scope.bChartData = categoryChartData('B');
+    $scope.cChartData = categoryChartData('C');
 
     $scope.$on('drop', function(event, args) {
       var index = $scope.dropzones.indexOf(args.target);
@@ -313,7 +337,95 @@ angular.module('dashboard-semaforos')
       target.areas.push(source);
       source.assigned = true;
 
+      $scope.globalChartData = globalChartData();
+      $scope.aChartData = categoryChartData('A');
+      $scope.bChartData = categoryChartData('B');
+      $scope.cChartData = categoryChartData('C');
+
       $scope.$apply();
 
     });
+
+
+    function globalChartData() {
+      var out = [];
+      var total = 0;
+      $scope.dropzones.forEach(function(zone) {
+        var values = [];
+        var a = { x: 'A', y: 0 };
+        var b = { x: 'B', y: 0 };
+        var c = { x: 'C', y: 0 };
+
+        values.push(a);
+        values.push(b);
+        values.push(c);
+
+        zone.areas.forEach(function(area) {
+          a.y += area.values.A.amount;
+          b.y += area.values.B.amount;
+          c.y += area.values.C.amount;
+
+          total += (area.values.A.amount + area.values.B.amount + area.values.C.amount);
+        });
+
+        out.push(values);
+      });
+
+
+      //calculo porcentajes
+      out.forEach(function(zone) {
+        zone.forEach(function(rubro) {
+          rubro.p = rubro.y / total;
+        });
+      });
+      return out;
+    }
+
+    function categoryChartData(category) {
+
+
+      var out = [];
+      var total = 0;
+      $scope.dropzones.forEach(function(zone) {
+        var values = [];
+
+
+        subRubros[category].forEach(function(name) {
+          values.push({ x: name, y: 0 });
+        });
+
+        zone.areas.forEach(function(area) {
+          var rubro = area.values[category];
+
+          rubro.subcategories.forEach(function(subcat) {
+            var element = values.find(function(element) {
+              element.x === subcat.name;
+            });
+
+            if (element) {
+              element.y += subcat.amount;
+            }else{
+              console.log(subcat);
+            }
+
+            total += subcat.amount;
+
+          });
+
+        });
+
+        out.push(values);
+      });
+
+
+      //calculo porcentajes
+      out.forEach(function(zone) {
+        zone.forEach(function(subrubro) {
+          subrubro.p = subrubro.y / total;
+        });
+      });
+      return out;
+    }
+
+
   }]);
