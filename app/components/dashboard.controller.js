@@ -22,9 +22,9 @@ RESULTADO
 */
   $scope.grid = {
         columnDefs: [
-          { name:'Empresa', field: 'EMPRESA',enableCellEdit: false },
-          { name:'Rubro', field: 'RUBRO' ,enableCellEdit: false},
-          { name:'Subrubro', field: 'SUBRUBRO',enableCellEdit: false },
+          { name:'Empresa',  field: 'EMPRESA' , width:100, enableCellEdit: false },
+          { name:'Rubro',    field: 'RUBRO'   , width:100, enableCellEdit: false },
+          { name:'Subrubro', field: 'SUBRUBRO', width:300,  enableCellEdit: false },
           { name:'Descripcion', field: 'description',enableCellEdit: false },
           { name:'SubItem', field: 'SUBITEM' ,enableCellEdit: false},
           { name:'U. M.', field: 'UnidadMedida',enableCellEdit: false },
@@ -65,7 +65,7 @@ RESULTADO
     console.log(row);
     row.p2010=row.precioUnitario*row.CANTIDAD;
     evalAndUpdate(row);
-    
+
     var promise = $q.defer();
     $scope.gridApi.rowEdit.setSavePromise( row, promise.promise );
     promise.resolve();
@@ -95,12 +95,16 @@ RESULTADO
       { row.RESULTADO = row.NPE; }
     else if (row.AJUSTE !== "")
       { row.RESULTADO = row.AJUSTE * row.p2010; }
-    else if ($scope.coeficientes["GENERAL"].value !== "")
-      { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; }
-    else if (($scope.coeficientes[row.RUBRO].value !== ""))
-      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; }
+    
     else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== ""))
       { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; }
+    
+    else if (($scope.coeficientes[row.RUBRO].value !== ""))
+      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; }
+    
+    else if ($scope.coeficientes["GENERAL"].value !== "")
+      { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; }
+    
     else
       { row.RESULTADO = ""; }
   }

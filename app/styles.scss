@@ -12,6 +12,9 @@ body,
         background: #1D1C1A;
         height: 5%;
         display: flex;
+        justify-content: space-between;
+    	padding-left: 1em;
+    	padding-right: 1em;
         .logo {
             background: url('../assets/img/bac-footer.png');
             height: 45px;
@@ -21,43 +24,46 @@ body,
         .title {
             color: #FDD306;
             font-size: 2em;
-            padding: 1em;
+        	float:right;
             letter-spacing: 6px!important;
         }
     }
     .content-body {
         outline: 1px dotted red;
         display: flex;
-        .coeficients {
-            flex-grow: 1;
-            outline: 1px dotted yellow;
-            h3 {
-                margin: 1em;
-            }
-
-            .rubro{
-            	.subrubro{
-            		padding-left: 2em;
-            		// outline: red dotted 2px;
-            	}
-            }
-        }
+        flex-direction: column;
         .distribution {
             outline: 1px dotted gray;
-            flex-grow: 3;
+            padding:2em;
             h3 {
                 margin: 1em;
             }
+        }
+
+        .data-sources{
+        	display: flex;
+	        .coeficients {
+	            outline: 1px dotted yellow;
+	            padding: 1em;
+	            flex-grow: 1;
+	            .rubro{
+	            	.subrubro{
+	            		padding-left: 2em;
+	            	}
+	            }
+	        }
+		    .grid-wrapper {
+		        outline: 1px dotted blue;
+		        
+				flex-grow: 1;
+		        .grid {
+		            width: 1920px;
+		            height: 980px;
+		        }
+		    }
         }
     }
     
-    .grid-wrapper {
-        outline: 1px dotted blue;
-        width: 1920px;
-        .grid {
-            width: 1920px;
-        }
-    }
 }
 
 //imports

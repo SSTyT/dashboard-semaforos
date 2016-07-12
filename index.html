@@ -17,30 +17,34 @@
         <div class="header">
             <div class="logo">
             </div>
-            <!--div class="title">
+            <div class="title">
                 <h1>DASHBOARD SEMAFOROS</h1>
-            </div-->
+            </div>
         </div>
         <div class="content-body">
-            <div class="coeficients">
-                <h3>Coficientes</h3>
-                <div class="rubro" ng-repeat="(key, rubro) in coeficientes">
-                    <h6>{{rubro.id}}</h6>
-                    <input type="number" name="{{rubro.id}}"  class="form-control" ng-enter="updateRowsMatching('RUBRO',rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
-                    <div class="subrubro" ng-repeat="(subrubro_key, subrubro) in rubro.subrubro">
-                        <h6>{{subrubro.id}}</h6>
-                        <input type="number" name="{{subrubro.id}}"  class="form-control" ng-enter="updateRowsMatching('SUBRUBRO',subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
-                    </div>                
-            </div>
-            </div>
             <div class="distribution">
-                <h3>Distribución de Áreas</h3>
+                <h2>Distribución de Áreas</h2>
                 <div ng-include="'distribution/distribution.html'" scope="" onload="">
                 </div>
             </div>
-        </div>
-        <div class="grid-wrapper">
-            <div ui-grid="grid" ui-grid-edit  ui-grid-row-edit ui-grid-cellNav class="grid"></div>
+            <div class = "data-sources">
+                
+                <div class="coeficients">
+                    <h2>Coficientes</h2>
+                    <div class="rubro" ng-repeat="(key, rubro) in coeficientes">
+                        <h6>{{rubro.id}}</h6>
+                        <input type="number" name="{{rubro.id}}"  class="form-control" ng-enter="updateRowsMatching('RUBRO',rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
+                        <div class="subrubro" ng-repeat="(subrubro_key, subrubro) in rubro.subrubro">
+                            <h6>{{subrubro.id}}</h6>
+                            <input type="number" name="{{subrubro.id}}"  class="form-control" ng-enter="updateRowsMatching('SUBRUBRO',subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
+                        </div>                
+                    </div>
+                </div>
+
+                <div class="grid-wrapper">
+                    <div ui-grid="grid" ui-grid-edit  ui-grid-row-edit ui-grid-cellNav ui-grid-resize-columns class="grid"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="table"></div>

@@ -7,7 +7,10 @@ body {
 .content .header {
   background: #1D1C1A;
   height: 5%;
-  display: flex; }
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1em;
+  padding-right: 1em; }
   .content .header .logo {
     background: url("../assets/img/bac-footer.png");
     height: 45px;
@@ -16,30 +19,32 @@ body {
   .content .header .title {
     color: #FDD306;
     font-size: 2em;
-    padding: 1em;
+    float: right;
     letter-spacing: 6px !important; }
 
 .content .content-body {
   outline: 1px dotted red;
-  display: flex; }
-  .content .content-body .coeficients {
-    flex-grow: 1;
-    outline: 1px dotted yellow; }
-    .content .content-body .coeficients h3 {
-      margin: 1em; }
-    .content .content-body .coeficients .rubro .subrubro {
-      padding-left: 2em; }
+  display: flex;
+  flex-direction: column; }
   .content .content-body .distribution {
     outline: 1px dotted gray;
-    flex-grow: 3; }
+    padding: 2em; }
     .content .content-body .distribution h3 {
       margin: 1em; }
-
-.content .grid-wrapper {
-  outline: 1px dotted blue;
-  width: 1920px; }
-  .content .grid-wrapper .grid {
-    width: 1920px; }
+  .content .content-body .data-sources {
+    display: flex; }
+    .content .content-body .data-sources .coeficients {
+      outline: 1px dotted yellow;
+      padding: 1em;
+      flex-grow: 1; }
+      .content .content-body .data-sources .coeficients .rubro .subrubro {
+        padding-left: 2em; }
+    .content .content-body .data-sources .grid-wrapper {
+      outline: 1px dotted blue;
+      flex-grow: 1; }
+      .content .content-body .data-sources .grid-wrapper .grid {
+        width: 1920px;
+        height: 980px; }
 
 bar-chart {
   font: 10px sans-serif; }
