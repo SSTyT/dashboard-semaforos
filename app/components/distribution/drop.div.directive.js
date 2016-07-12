@@ -23,6 +23,15 @@ angular.module('dashboard-semaforos')
       if (e.stopPropagation) e.stopPropagation();
     }
 
+    $scope.remove = function(area) {
+      var index = $scope.dropzone.areas.indexOf(area);
+      if (index > -1) {
+        $scope.dropzone.areas.splice(index, 1);
+        area.assigned = false;
+      }
+      $rootScope.$broadcast('refresh');
+    }
+
     $element.find('div.dropzone')[0].addEventListener('dragover', handleDragOver, false);
     $element.find('div.dropzone')[0].addEventListener('drop', handleDrop, false);
   }]);

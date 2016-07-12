@@ -321,10 +321,14 @@ angular.module('dashboard-semaforos')
       { name: "6", areas: [] }
     ]
 
-    $scope.globalChartData = globalChartData();
-    $scope.aChartData = categoryChartData('A');
-    $scope.bChartData = categoryChartData('B');
-    $scope.cChartData = categoryChartData('C');
+    function refreshGraphs() {
+      $scope.globalChartData = globalChartData();
+      $scope.aChartData = categoryChartData('A');
+      $scope.bChartData = categoryChartData('B');
+      $scope.cChartData = categoryChartData('C');
+    }
+
+    refreshGraphs();
 
     $scope.$on('drop', function(event, args) {
       var index = $scope.dropzones.indexOf(args.target);
@@ -337,15 +341,15 @@ angular.module('dashboard-semaforos')
       target.areas.push(source);
       source.assigned = true;
 
-      $scope.globalChartData = globalChartData();
-      $scope.aChartData = categoryChartData('A');
-      $scope.bChartData = categoryChartData('B');
-      $scope.cChartData = categoryChartData('C');
+      refreshGraphs();
 
       $scope.$apply();
 
     });
 
+    $scope.$on('refresh', function() {
+      refreshGraphs();
+    });
 
     function globalChartData() {
       var out = [];
@@ -389,7 +393,6 @@ angular.module('dashboard-semaforos')
       $scope.dropzones.forEach(function(zone) {
         var values = [];
 
-
         subRubros[category].forEach(function(name) {
           values.push({ x: name, y: 0 });
         });
@@ -399,12 +402,12 @@ angular.module('dashboard-semaforos')
 
           rubro.subcategories.forEach(function(subcat) {
             var element = values.find(function(element) {
-              element.x === subcat.name;
+              return element.x === subcat.name;
             });
 
             if (element) {
               element.y += subcat.amount;
-            }else{
+            } else {
               console.log(subcat);
             }
 

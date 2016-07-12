@@ -13,8 +13,8 @@ angular.module('dashboard-semaforos')
   .controller('barChartCtrl', ['$scope', '$element', function barChartCtrl($scope, $element) {
 
     //Definicion de areas y ejes
-    var margin = { top: 40, right: 20, bottom: 30, left: 80 },
-      width = 450 - margin.left - margin.right,
+    var margin = { top: 20, right: 20, bottom: 75, left: 80 },
+      width = 500 - margin.left - margin.right,
       height = 350 - margin.top - margin.bottom;
 
     var x = d3.scale.ordinal()
@@ -108,7 +108,9 @@ angular.module('dashboard-semaforos')
         svg.append('g')
           .attr('class', 'x axis')
           .attr('transform', 'translate(0,' + height + ')')
-          .call(xAxis);
+          .call(xAxis)
+          .selectAll(".tick text")
+          .call(wrap, x.rangeBand());
 
         svg.append('g')
           .attr('class', 'y axis')
@@ -120,4 +122,30 @@ angular.module('dashboard-semaforos')
           .style('text-anchor', 'end');
       }
     }, true);
+
+
+    function wrap(text, width) {
+      text.each(function() {
+        var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1.1, // ems
+          y = text.attr("y"),
+          dy = parseFloat(text.attr("dy")),
+          tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+          }
+        }
+      });
+    }
+
   }]);
