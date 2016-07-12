@@ -64,10 +64,10 @@ RESULTADO
   $scope.saveRow =function (row){
     console.log(row);
     row.p2010=row.precioUnitario*row.CANTIDAD;
+    evalAndUpdate(row);
+    
     var promise = $q.defer();
-
     $scope.gridApi.rowEdit.setSavePromise( row, promise.promise );
-
     promise.resolve();
   }
 
