@@ -43,13 +43,14 @@
         }
     }
     .drop-container {
-        flex-grow: 1;
+       // flex-grow: 1;
         display: -webkit-flex;
         display: flex;
         -webkit-align-items: flex-start;
         -webkit-justify-content: center;
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
+            width: 720px;
         .dropzone {
             width: 200px;
             height: 150px;
