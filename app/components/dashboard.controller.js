@@ -1,11 +1,11 @@
 'use strict';
-angular.module('dashboard-semaforos').controller('DashboardController', ['$scope', '$rootScope', '$q', 'DataOriginService', DashboardController])
+angular.module('dashboard-semaforos').controller('DashboardController', ['$scope', '$rootScope','$anchorScroll','$location', '$q', 'DataOriginService', DashboardController])
 
-function DashboardController($scope, $rootScope, $q, DataOriginService) {
+function DashboardController($scope, $rootScope,$anchorScroll,$location, $q, DataOriginService) {
 
 
   var vm = this;
-
+  $scope.hash = "distribution" ;
   /*
 EM  PRESA
 RU  BRO
@@ -88,6 +88,20 @@ RESULTA, width:100, width:100DO
     }
   }
 
+
+  $scope.goTo = function goto(hash){
+
+    $scope.hash = hash;
+    if ($location.hash() !== hash) {
+        // set the $location.hash to `newHash` and
+        // $anchorScroll will automatically scroll to it
+        $location.hash(hash);
+      } else {
+        // call $anchorScroll() explicitly,
+        // since $location.hash hasn't changed
+        $anchorScroll();
+      }
+  }
 
 
   function evalAndUpdate(row){

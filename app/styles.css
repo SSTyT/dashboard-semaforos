@@ -10,7 +10,9 @@ body {
   align-items: center;
   right: 0;
   background: #1D1C1A;
-  z-index: 1000; }
+  z-index: 1000;
+  animation: show-title  1s;
+  transform: translateY(0%); }
   .content .title-wrapper .title {
     font-weight: 300;
     letter-spacing: 6px !important;
@@ -25,6 +27,8 @@ body {
     padding: 1em; }
     .content .title-wrapper .links-bar .link {
       padding: .5em; }
+    .content .title-wrapper .links-bar .link.active {
+      font-weight: bold; }
 
 .content .content-body {
   outline: 1px dotted red;
@@ -37,9 +41,16 @@ body {
     padding: 2em;
     padding-top: 0;
     width: 100vw;
-    height: 100vh; }
+    min-height: 100vh; }
     .content .content-body .distribution h3 {
       margin: 1em; }
+
+@keyframes show-title {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1;
+    transform: translateY(0%); } }
 
 bar-chart {
   font: 10px sans-serif; }
@@ -186,6 +197,9 @@ bar-chart {
       padding: 1em;
       width: 30%;
       height: 100%; }
+      .data-sources-wrapper .data-sources .coeficients h3 {
+        margin: 1em;
+        margin-left: 0; }
       .data-sources-wrapper .data-sources .coeficients .rubro .subrubro {
         padding-left: 2em; }
     .data-sources-wrapper .data-sources .grid-wrapper {
@@ -199,3 +213,13 @@ bar-chart {
       .data-sources-wrapper .data-sources .grid-wrapper .grid {
         width: 90%;
         height: 60vh; }
+
+.data-controladores {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw; }
+  .data-controladores .coeficients h3, .data-controladores .costos-wrapper h3 {
+    margin: 1em;
+    margin-left: 0; }
+  .data-controladores .coeficients {
+    width: 30%; }
