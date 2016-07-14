@@ -88,10 +88,10 @@
       "name": "Citar",
       "cant": 230
     },
-    "Siemens CLS98": [{
+    "Siemens CLS98": {
       "name": "Citar",
       "cant": 2
-    }],
+    },
     "Mantelec": {
       "name": "Citar",
       "cant": 96
