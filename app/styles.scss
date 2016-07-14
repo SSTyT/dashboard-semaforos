@@ -70,6 +70,9 @@ body,
 			    }
 			    .link.active{
 			    	font-weight: bold;
+			    	    color: #FDD306;
+			    	   transition-property: all;
+    transition-duration: .5s;
 			    }
 
             }
@@ -79,12 +82,16 @@ body,
         outline: 1px dotted red;
         display: flex;
         flex-direction: column;
-        h2{
+        h1{
         	padding-left:.5em;
+        }
+
+        .wrapper{
+        	padding: 1em;
         }
         .distribution {
             outline: 1px dotted gray;
-            padding:2em;
+
         	padding-top: 0;
         	width: 100vw;
         	min-height: 100vh;

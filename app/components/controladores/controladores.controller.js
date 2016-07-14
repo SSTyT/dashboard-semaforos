@@ -12,7 +12,7 @@ angular.module('dashboard-semaforos')
 
       $scope.gridController = {
         columnDefs: [
-          { name: 'Zona', field: 'ZONA', width: 100, enableCellEdit: false }, {
+          { name: 'Zona', field: 'ZONA', enableCellEdit: false }, {
             name: 'Tecnología',
             field: 'TEC',
             width: 100,
@@ -26,10 +26,10 @@ angular.module('dashboard-semaforos')
               { id: 4, tech: 'Optimus' }
             ]
           },
-          { name: 'Costo 2010', field: 'COSTO2010', width: 100, enableCellEdit: false },
-          { name: 'N° Controladores', field: 'CONTROLADORES', width: 100, enableCellEdit: false },
-          { name: 'N° Nodos', field: 'NODOS', width: 100, enableCellEdit: false },
-          { name: 'Costo Actual', field: 'COSTO', width: 100, enableCellEdit: false },
+          { name: 'Costo 2010', field: 'COSTO2010', enableCellEdit: false },
+          { name: 'N° Controladores', field: 'CONTROLADORES', enableCellEdit: false },
+          { name: 'N° Nodos', field: 'NODOS', enableCellEdit: false },
+          { name: 'Costo Actual', field: 'COSTO', enableCellEdit: false },
         ],
         data: []
       };

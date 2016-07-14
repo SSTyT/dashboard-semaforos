@@ -51,17 +51,21 @@ body {
     .content .title-wrapper .links-bar .link {
       padding: .5em; }
     .content .title-wrapper .links-bar .link.active {
-      font-weight: bold; }
+      font-weight: bold;
+      color: #FDD306;
+      transition-property: all;
+      transition-duration: .5s; }
 
 .content .content-body {
   outline: 1px dotted red;
   display: flex;
   flex-direction: column; }
-  .content .content-body h2 {
+  .content .content-body h1 {
     padding-left: .5em; }
+  .content .content-body .wrapper {
+    padding: 1em; }
   .content .content-body .distribution {
     outline: 1px dotted gray;
-    padding: 2em;
     padding-top: 0;
     width: 100vw;
     min-height: 100vh; }
@@ -145,6 +149,7 @@ bar-chart {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
+    padding: 1em;
     width: 30%; }
     .dragg-and-drop-area .zone-picker drag-ul {
       display: inherit;
@@ -195,6 +200,7 @@ bar-chart {
             color: white;
             cursor: pointer; }
   .dragg-and-drop-area .charts {
+    padding: 1em;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: flex-start;
@@ -218,29 +224,32 @@ bar-chart {
     /* Non-prefixed version, currently
                                       not supported by any browser */ }
 
-.data-sources-wrapper {
+.data-sources {
   height: 100vh; }
-  .data-sources-wrapper .data-sources {
+  .data-sources .data-sources {
     display: flex;
     width: 100vw; }
-    .data-sources-wrapper .data-sources .coeficients {
+    .data-sources .data-sources .coeficients {
       padding: 1em;
       width: 30%;
       height: 100%; }
-      .data-sources-wrapper .data-sources .coeficients h3 {
+      .data-sources .data-sources .coeficients h3 {
         margin: 1em;
         margin-left: 0; }
-      .data-sources-wrapper .data-sources .coeficients .rubro .subrubro {
-        padding-left: 2em; }
-    .data-sources-wrapper .data-sources .grid-wrapper {
-      width: 70%;
+      .data-sources .data-sources .coeficients .rubro {
+        padding: .25em 0; }
+        .data-sources .data-sources .coeficients .rubro .subrubro {
+          padding: .25em 0;
+          padding-left: 2em; }
+    .data-sources .data-sources .grid-wrapper {
+      width: 80%;
       height: 80%;
       overflow: hidden;
       padding: 1em; }
-      .data-sources-wrapper .data-sources .grid-wrapper h3 {
+      .data-sources .data-sources .grid-wrapper h3 {
         margin: 1em;
         margin-left: 0; }
-      .data-sources-wrapper .data-sources .grid-wrapper .grid {
+      .data-sources .data-sources .grid-wrapper .grid {
         width: 90%;
         height: 60vh; }
 
@@ -248,8 +257,15 @@ bar-chart {
   display: flex;
   min-height: 100vh;
   width: 100vw; }
-  .data-controladores .coeficients h3, .data-controladores .costos-wrapper h3 {
-    margin: 1em;
-    margin-left: 0; }
+  .data-controladores .coeficients, .data-controladores .costos-wrapper {
+    padding: 1em; }
+    .data-controladores .coeficients h3, .data-controladores .costos-wrapper h3 {
+      margin: 1em;
+      margin-left: 0; }
   .data-controladores .coeficients {
     width: 30%; }
+  .data-controladores .costos-wrapper {
+    width: 70%; }
+    .data-controladores .costos-wrapper .grid {
+      width: 90%;
+      height: 60vh; }
