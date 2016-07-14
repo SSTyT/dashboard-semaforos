@@ -161,7 +161,8 @@ bar-chart {
     .dragg-and-drop-area .zone-picker .areas {
       display: -webkit-flex;
       display: flex;
-      padding: 15px; }
+      padding: 15px;
+      padding-bottom: 0; }
       .dragg-and-drop-area .zone-picker .areas .list-group {
         width: 100%;
         display: flex;
@@ -190,6 +191,18 @@ bar-chart {
         flex-flow: row wrap;
         position: relative;
         border-radius: 4px; }
+        .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption {
+          display: flex;
+          font-size: 10px;
+          position: absolute;
+          bottom: -19px;
+          width: 100%;
+          justify-content: space-between;
+          padding: .2em .5em; }
+          .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption .total {
+            background: #1D1C1A;
+            color: #FDD306;
+            padding: .1em .5em; }
         .dragg-and-drop-area .zone-picker .drop-container .dropzone .name {
           bottom: .5em;
           right: .5em;
@@ -199,6 +212,17 @@ bar-chart {
           .dragg-and-drop-area .zone-picker .drop-container .dropzone .area a {
             color: white;
             cursor: pointer; }
+    .dragg-and-drop-area .zone-picker .Presupuestos-container {
+      padding: 0 1em;
+      font-family: gotham; }
+      .dragg-and-drop-area .zone-picker .Presupuestos-container .item {
+        width: 50%; }
+        .dragg-and-drop-area .zone-picker .Presupuestos-container .item .cifra {
+          float: right; }
+      .dragg-and-drop-area .zone-picker .Presupuestos-container .item.total {
+        padding: .5em 1em;
+        background: #1D1C1A;
+        color: #FDD306; }
   .dragg-and-drop-area .charts {
     padding: 1em;
     display: -webkit-flex;
@@ -268,4 +292,4 @@ bar-chart {
     width: 70%; }
     .data-controladores .costos-wrapper .grid {
       width: 90%;
-      height: 230px; }
+      height: 60vh; }

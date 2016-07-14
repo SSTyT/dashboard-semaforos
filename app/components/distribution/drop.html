@@ -1,6 +1,11 @@
-    <div ng-class="zone" class="dropzone">
-        <span ng-repeat="area in dropzone.areas" class="area label label-info">{{area.name}} <a ng-click="remove(area)"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
-        </span>
-         <span class="name">Zona {{dropzone.name}}</span>
-    </div>
-
+<div ng-class="zone" class="dropzone">
+    <span ng-repeat="area in dropzone.areas" class="area label label-info">{{area.name}}
+        	<a ng-click="remove(area)">
+        		<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+        	</a>
+    </span>
+	<div class="sub-caption">
+			<div class="ordinario">3.000.000</div>+<div class="recambio">5.000.000</div>=<div class="total">8.000.000</div>
+	</div>
+    <span class="name">Zona {{dropzone.name}}</span>
+</div>
