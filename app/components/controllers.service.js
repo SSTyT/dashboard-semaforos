@@ -12,7 +12,7 @@ function ControllerService($q, $http) {
     controllers = payload.data;
   });
 
-  var _assignZone = function(zone, system) {
+  function assignZone(zone, system) {
     var out = {
       total: 0,
       detail: []
@@ -30,7 +30,25 @@ function ControllerService($q, $http) {
     });
   }
 
-  return {
-    assignZone: _assignZone
+  function calculate(zonas, sistema, costoControlador, factorControlador, costoNodo, factorNodo, ratio) {
+    var out = {
+      costo2010: 0,
+      costoActual: 0,
+      recambioControlador: 0,
+      recambioNodos: 0
+    }
+    zonas.forEach(function(zona) {
+      var valores = assignZone(zona, sistema);
+      out.recambioControlador += valores.total;
+    });
+
+    out.recambioNodos = Math.ceil(out.recambioControlador / ratio);
+    out.costo2010 = out.recambioControlador * costoControlador + out.recambioNodos * costoNodo;
+    out.costoActual = out.recambioControlador * costoControlador * factorControlador +
+      out.recambioNodos * costoNodo * factorNodo;
+
+    return out;
   }
+
+  return { calculate: calculate }
 }
