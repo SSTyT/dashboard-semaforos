@@ -1,11 +1,62 @@
 'use strict';
-angular.module('dashboard-semaforos').controller('DashboardController', ['$scope', '$rootScope','$anchorScroll','$location', '$q', 'DataOriginService', DashboardController])
+angular.module('dashboard-semaforos')
+  .controller('DashboardController', ['$scope', '$rootScope', '$anchorScroll', '$location', '$q', 'DataOriginService', DashboardController])
+  .filter('decimalComa', function() {
+    function numberWithCommas(x) {
+      var parts = x.toString().split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
+    }
+    return function(input) {
+      if (parseInt(0 + input) === 0) {
+        return '';
+      } else {
+        var out = numberWithCommas(parseFloat(0 + input).toFixed(2)).replace(/\./g, '*');
+        out = out.replace(/,/g, '.');
+        return out.replace(/\*/g, ',');
+      }
+    };
+  })
+  .filter('guita', function() {
+    function numberWithCommas(x) {
+      var parts = x.toString().split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
+    }
+    return function(input) {
+      if (parseInt(0 + input) === 0) {
+        return '';
+      } else {
+        var out = numberWithCommas(parseFloat(0 + input).toFixed(2)).replace(/\./g, '*');
+        out = out.replace(/,/g, '.');
+        return '$' + out.replace(/\*/g, ',');
+      }
 
-function DashboardController($scope, $rootScope,$anchorScroll,$location, $q, DataOriginService) {
+    };
+  })
+  .filter('int', function() {
+    function numberWithCommas(x) {
+      var parts = x.toString().split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
+    }
+    return function(input) {
+      if (parseInt(0 + input) === 0) {
+        return '0';
+      } else {
+        var out = numberWithCommas(parseInt(0 + input).toFixed(0)).replace(/\./g, '*');
+        out = out.replace(/,/g, '.');
+        return out.replace(/\*/g, ',');
+      }
+    };
+  });
+
+
+function DashboardController($scope, $rootScope, $anchorScroll, $location, $q, DataOriginService) {
 
 
   var vm = this;
-  $scope.hash = "distribution" ;
+  $scope.hash = "distribution";
   /*
 EM  PRESA
 RU  BRO
@@ -21,21 +72,21 @@ N, width:100PE
 RESULTA, width:100, width:100DO
 */
   $scope.grid = {
-        columnDefs: [
-          { name:'Empresa',     field: 'EMPRESA' ,       width:100, enableCellEdit: false },
-          { name:'Rubro',       field: 'RUBRO'   ,       width:100, enableCellEdit: false },
-          { name:'Subrubro',    field: 'SUBRUBRO',       width:300, enableCellEdit: false },
-          { name:'Descripcion', field: 'description',    width:200, enableCellEdit: false },
-          { name:'SubItem',     field: 'SUBITEM',        width:100, enableCellEdit: false },
-          { name:'U. M.',       field: 'UnidadMedida',   width:100, enableCellEdit: false },
-          { name:'Cantidad',    field: 'CANTIDAD',       width:100, enableCellEdit: true  },
-          { name:'Precio U',    field: 'precionitario',  width:100, enableCellEdit: true  },
-          { name:'Precio 2010', field: 'p2010',          width:150, enableCellEdit: false },
-          { name:'Ajuste',      field: 'AJUSTE',         width:70,  enableCellEdit: true  },
-          { name:'Estimado',    field: 'NPE',            width:100, enableCellEdit: true  },
-          { name:'Resultado',   field: 'RESULTADO',      width:150, enableCellEdit: false }
-        ],
-        data:[]
+    columnDefs: [
+      { name: 'Empresa', field: 'EMPRESA', width: 100, enableCellEdit: false },
+      { name: 'Rubro', field: 'RUBRO', width: 100, enableCellEdit: false },
+      { name: 'Subrubro', field: 'SUBRUBRO', width: 300, enableCellEdit: false },
+      { name: 'Descripcion', field: 'description', width: 200, enableCellEdit: false },
+      { name: 'SubItem', field: 'SUBITEM', width: 100, enableCellEdit: false },
+      { name: 'U. M.', field: 'UnidadMedida', width: 100, enableCellEdit: false },
+      { name: 'Cantidad', field: 'CANTIDAD', width: 100, enableCellEdit: true, cellFilter: 'int' },
+      { name: 'Precio U', field: 'precioUnitario', width: 100, enableCellEdit: true, cellFilter: 'guita' },
+      { name: 'Precio 2010', field: 'p2010', width: 150, enableCellEdit: false, cellFilter: 'guita' },
+      { name: 'Ajuste', field: 'AJUSTE', width: 70, enableCellEdit: true, cellFilter: 'decimalComa' },
+      { name: 'Estimado', field: 'NPE', width: 100, enableCellEdit: true, cellFilter: 'guita' },
+      { name: 'Resultado', field: 'RESULTADO', width: 150, enableCellEdit: false, cellFilter: 'guita' }
+    ],
+    data: []
   };
 
 
@@ -89,41 +140,26 @@ RESULTA, width:100, width:100DO
   }
 
 
-  $scope.goTo = function goto(hash){
+  $scope.goTo = function goto(hash) {
 
     $scope.hash = hash;
     if ($location.hash() !== hash) {
-        // set the $location.hash to `newHash` and
-        // $anchorScroll will automatically scroll to it
-        $location.hash(hash);
-      } else {
-        // call $anchorScroll() explicitly,
-        // since $location.hash hasn't changed
-        $anchorScroll();
-      }
+      // set the $location.hash to `newHash` and
+      // $anchorScroll will automatically scroll to it
+      $location.hash(hash);
+    } else {
+      // call $anchorScroll() explicitly,
+      // since $location.hash hasn't changed
+      $anchorScroll();
+    }
   }
 
 
-  function evalAndUpdate(row){
-      if (row.NPE !== "")
-        { row.RESULTADO = row.NPE; }
-      else if (row.AJUSTE !== "")
-        { row.RESULTADO = row.AJUSTE * row.p2010; }
-      
-      else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== ""))
-        { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; }
-      
-      else if (($scope.coeficientes[row.RUBRO].value !== ""))
-        { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; }
-      
-      else if ($scope.coeficientes["GENERAL"].value !== "")
-        { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; }
-      
-      else
-        { row.RESULTADO = ""; }
+  function evalAndUpdate(row) {
+    if (row.NPE !== "") { row.RESULTADO = row.NPE; } else if (row.AJUSTE !== "") { row.RESULTADO = row.AJUSTE * row.p2010; } else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== "")) { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; } else if (($scope.coeficientes[row.RUBRO].value !== "")) { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; } else if ($scope.coeficientes["GENERAL"].value !== "") { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; } else { row.RESULTADO = ""; }
 
-      $rootScope.$broadcast('grid-change', $scope.grid.data);
-    
+    $rootScope.$broadcast('grid-change', $scope.grid.data);
+
 
   }
   console.log("READY!");

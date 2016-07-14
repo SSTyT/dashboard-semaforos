@@ -11,6 +11,12 @@ angular.module('dashboard-semaforos')
     }
   }])
   .controller('barChartCtrl', ['$scope', '$element', function barChartCtrl($scope, $element) {
+    
+    function thousandSep(x) {
+      var num = x.toString()
+      num = num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      return num;
+    }
 
     //Definicion de areas y ejes
     var margin = { top: 20, right: 20, bottom: 75, left: 80 },
@@ -39,7 +45,7 @@ angular.module('dashboard-semaforos')
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
-        return '<strong></strong> <span>$' + (Math.ceil(d.y)) + ' ('+percentage(d.p)+')</span>';
+        return '<strong></strong> <span>$' + thousandSep(Math.ceil(d.y)) + ' ('+percentage(d.p)+')</span>';
       })
 
     $scope.$watch('chartData', function() {
