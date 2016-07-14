@@ -1,0 +1,259 @@
+{
+  "1": {
+    "Autotrol CT800": {
+      "name": "Icarus",
+      "cant": 3
+    },
+    "Swarco  ITC-2": {
+      "name": "OMNIA",
+      "cant": 75
+    },
+    "Siemens CLE": {
+      "name": "Citar",
+      "cant": 9
+    },
+    "Siemens CLS": {
+      "name": "Citar",
+      "cant": 209
+    },
+    "Siemens CLS214": {
+      "name": "Citar",
+      "cant": 1
+    },
+    "Siemens CLS214PLUS": {
+      "name": "Citar",
+      "cant": 32
+    },
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 31
+    },
+    "Siemens CLS98": {
+      "name": "Citar",
+      "cant": 8
+    }
+  },
+  "2": {
+    "Schneider RMY": {
+      "name": "OPTIMUS",
+      "cant": 56
+    },
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 389
+    },
+    "Siemens CLS98": {
+      "name": "Citar",
+      "cant": 20
+    },
+    "Siemens CLS214PLUS": {
+      "name": "Citar",
+      "cant": 66
+    },
+    "Schneider RBY": {
+      "name": "OPTIMUS",
+      "cant": 31
+    },
+    "Schneider T-RBY": {
+      "name": "OPTIMUS",
+      "cant": 22
+    },
+    "Autotrol CT800i": {
+      "name": "Icarus",
+      "cant": 4
+    },
+    "REGER": {
+      "name": "Citar",
+      "cant": 8
+    },
+    "EAGLE": {
+      "name": "Citar",
+      "cant": 1
+    }
+  },
+  "3": {
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 32
+    },
+    "Siemens CLS214PLUS": {
+      "name": "Citar",
+      "cant": 166
+    },
+    "Siemens CLS214": {
+      "name": "Citar",
+      "cant": 6
+    },
+    "Siemens STC M4-20": {
+      "name": "Citar",
+      "cant": 230
+    },
+    "Siemens CLS98": [{
+      "name": "Citar",
+      "cant": 2
+    }],
+    "Mantelec": {
+      "name": "Citar",
+      "cant": 96
+    },
+    "REGER": {
+      "name": "Citar",
+      "cant": 1
+    },
+    "Siemens CLE": {
+      "name": "Citar",
+      "cant": 4
+    }
+  },
+  "4": {
+    "Autotrol CT800dmc": {
+      "name": "Icarus",
+      "cant": 449
+    },
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 1
+    }
+  },
+
+  "5a": {
+    "Autotrol CT800y": {
+      "name": "Icarus",
+      "cant": 40
+    },
+    "Autotrol CT800dmc": {
+      "name": "Icarus",
+      "cant": 70
+    }
+  },
+  "5b": {
+    "Autotrol CT800y": {
+      "name": "Icarus",
+      "cant": 323
+    },
+    "Autotrol CT800dmc": {
+      "name": "Icarus",
+      "cant": 190
+    },
+    "Autotrol CT800dm": {
+      "name": "Icarus",
+      "cant": 4
+    },
+    "Autotrol CT800i": {
+      "name": "Icarus",
+      "cant": 2
+    }
+  },
+  "6": {
+    "Siemens CLS214PLUS": {
+      "name": "Citar",
+      "cant": 3
+    },
+    "Autotrol CT800dmc": {
+      "name": "Icarus",
+      "cant": 329
+    },
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 4
+    },
+    "Siemens CLE": {
+      "name": "Citar",
+      "cant": 41
+    },
+    "Siemens GF": {
+      "name": "Citar",
+      "cant": 2
+    },
+    "Siemens GA": {
+      "name": "Citar",
+      "cant": 4
+    },
+    "Autotrol CT800i": {
+      "name": "Icarus",
+      "cant": 5
+    }
+  },
+  "7": {
+    "Siemens STC M4-20": {
+      "name": "Citar",
+      "cant": 39
+    },
+    "Siemens CLS214PLUS": {
+      "name": "Citar",
+      "cant": 21
+    },
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 159
+    },
+    "Siemens CLE": {
+      "name": "Citar",
+      "cant": 27
+    },
+    "Mantelec": {
+      "name": "Citar",
+      "cant": 10
+    },
+    "Siemens STC": {
+      "name": "Citar",
+      "cant": 2
+    },
+    "Siemens CLS98": {
+      "name": "Citar",
+      "cant": 12
+    },
+    "Siemens GE": {
+      "name": "Citar",
+      "cant": 2
+    },
+    "Siemens GA": {
+      "name": "Citar",
+      "cant": 1
+    },
+    "Siemens CLS214": {
+      "name": "Citar",
+      "cant": 1
+    }
+  },
+  "8": {
+    "Autotrol CT800dmc": {
+      "name": "Icarus",
+      "cant": 146
+    },
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 34
+    },
+    "Autotrol CT800i": {
+      "name": "Icarus",
+      "cant": 9
+    },
+    "Siemens CLS214PLUS": {
+      "name": "Citar",
+      "cant": 42
+    }
+  },
+  "9": {
+    "Siemens STC": {
+      "name": "Citar",
+      "cant": 121
+    },
+    "Siemens CLS214PLUS": {
+      "name": "Citar",
+      "cant": 104
+    },
+    "Autotrol CT800i": {
+      "name": "Icarus",
+      "cant": 1
+    },
+    "Siemens CLS98": {
+      "name": "Citar",
+      "cant": 1
+    },
+    "Siemens CLS95": {
+      "name": "Citar",
+      "cant": 4
+    }
+  }
+}
