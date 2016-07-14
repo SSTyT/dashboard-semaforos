@@ -23,25 +23,24 @@
         </div>
 
         <div class="title-wrapper">
-                <div class="title">DASHBOARD SEMÁFOROS</div>
-                <div class="links-bar">
-                    <div class="link" ng-click="goTo('distribution')"  ng-class="{'active':hash == 'distribution'}">
-                        Distribución     
-                    </div>
-                    <div class="link"  ng-click="goTo('data-sources')"  ng-class="{'active':hash == 'data-sources'}">
-                        Entrada     
-                    </div>
-                    <div class="link"  ng-click="goTo('racambio-tecnico')"  ng-class="{'active':hash == 'racambio-tecnico'}">
-                        Recambio    
-                    </div>
+            <div class="title">DASHBOARD SEMÁFOROS</div>
+            <div class="links-bar">
+                <div class="link" ng-click="goTo('distribution')"  ng-class="{'active':hash == 'distribution'}">
+                    Distribución     
                 </div>
+                <div class="link"  ng-click="goTo('data-sources')"  ng-class="{'active':hash == 'data-sources'}">
+                    Entrada     
+                </div>
+                <div class="link"  ng-click="goTo('racambio-tecnico')"  ng-class="{'active':hash == 'racambio-tecnico'}">
+                    Recambio    
+                </div>
+            </div>
         </div>
-    <div class="content-body">
-        <div id="distribution"      class="distribution"               ng-include="'distribution/distribution.html'"   scope="" onload=""></div>
-        <div id="data-sources"      class="data-sources-wrapper"       ng-include="'tabla/tabla.html'"                 scope="" onload=""></div>
-        <div id="racambio-tecnico"  class="recambio-tecnico-wrapper"   ng-include="'controladores/controladores.html'" scope="" onload=""></div>
-    </div>
-    <div class="table"></div>
+        <div class="content-body">
+            <div id="distribution" class="distribution" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
+            <div id="data-sources" class="data-sources-wrapper" ng-include="'tabla/tabla.html'" scope="" onload=""></div>
+            <div id="racambio-tecnico" class="recambio-tecnico-wrapper" ng-include="'controladores/controladores.html'" scope="" onload=""></div>
+        </div>
     </div>
     <!--libs-->
     <script src="assets/js/jquery.min.js"></script>
@@ -49,9 +48,6 @@
     <script src="assets/js/d3.v3.js"></script>
     <script src="assets/js/d3.tip.v0.6.3.js"></script>
     <script src="assets/js/angular.min.js"></script>
-
-
-
     <script src="assets/js/ui-grid.min.js"></script>
     <!--app-->
     <script src="app/shared/templates.js"></script>
@@ -61,6 +57,7 @@
     <script src="app/components/distribution/distribution.controller.js"></script>
     <script src="app/components/distribution/drag.ul.directive.js"></script>
     <script src="app/components/distribution/drop.div.directive.js"></script>
+    <script src="app/components/controladores/controladores.controller.js"></script>
     <script src="app/components/dashboard.controller.js"></script>
     <script src="app/components/data.origin.service.js"></script>
     <script src="app/components/controllers.service.js"></script>
