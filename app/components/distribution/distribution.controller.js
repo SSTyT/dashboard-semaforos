@@ -1,6 +1,6 @@
 'use strict';
 angular.module('dashboard-semaforos')
-  .controller('DistributionCtrl', ['$scope', function barChartCtrl($scope) {
+  .controller('DistributionCtrl', ['$scope', '$rootScope', function DistributionCtrl($scope, $rootScope) {
     $scope.areas = [{
       name: "1-SWARCO",
       assigned: false,
@@ -326,6 +326,8 @@ angular.module('dashboard-semaforos')
       $scope.aChartData = categoryChartData('A');
       $scope.bChartData = categoryChartData('B');
       $scope.cChartData = categoryChartData('C');
+
+      $rootScope.$broadcast('zones-change', $scope.dropzones);
     }
 
     refreshGraphs();

@@ -12,13 +12,14 @@ function ControllerService($q, $http) {
     controllers = payload.data;
   });
 
-  function assignZone(zone, system) {
+  function assignZone(zoneName, system) {
     var out = {
       total: 0,
       detail: []
     }
-    var zone = controllers[zone]
-    zone.forEach(function(controller, key) {
+    var zone = controllers[zoneName.toLowerCase()]
+    Object.keys(zone).forEach(function(key) {
+      var controller = zone[key];
       if (system.toLowerCase() !== controller.name.toLowerCase()) {
         out.total += controller.cant;
         out.detail.push({
@@ -28,6 +29,7 @@ function ControllerService($q, $http) {
         });
       }
     });
+    return out;
   }
 
   function calculate(zonas, sistema, costoControlador, factorControlador, costoNodo, factorNodo, ratio) {

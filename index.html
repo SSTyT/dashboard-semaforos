@@ -15,29 +15,26 @@
 <body>
     <div class="content" ng-app="dashboard-semaforos" ng-controller="DashboardController as vm">
         <div class="title-wrapper">
-                <div class="title">DASHBOARD SEMAFOROS</div>
-                <div class="links-bar">
-                    <div class="link">
-                        Distribucion     
-                    </div>
-                    <div class="link">
-                        Presupuesto     
-                    </div>
-                    <div class="link">
-                        Controladores    
-                    </div>
+            <div class="title">DASHBOARD SEMAFOROS</div>
+            <div class="links-bar">
+                <div class="link">
+                    Distribucion
                 </div>
+                <div class="link">
+                    Presupuesto
+                </div>
+                <div class="link">
+                    Controladores
+                </div>
+            </div>
         </div>
-    <div class="content-body">
-       
-        <div class="distribution" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
-        
+        <div class="content-body">
+            <div class="distribution" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
+            <div class="data-sources-wrapper" ng-include="'tabla/tabla.html'" scope="" onload=""></div>
+            <div class="recambio-tecnico-wrapper" ng-include="'controladores/controladores.html'" scope="" onload=""></div>
+        </div>
+        <div class="table"></div>
 
-        <div class="data-sources-wrapper"     ng-include="'tabla/tabla.html'" scope="" onload=""></div>
-        <div class="recambio-tecnico-wrapper" ng-include="'controladores/controladores.html'" scope="" onload=""></div>
-
-    </div>
-    <div class="table"></div>
     </div>
     <!--libs-->
     <script src="assets/js/jquery.min.js"></script>
@@ -45,9 +42,6 @@
     <script src="assets/js/d3.v3.js"></script>
     <script src="assets/js/d3.tip.v0.6.3.js"></script>
     <script src="assets/js/angular.min.js"></script>
-
-
-
     <script src="assets/js/ui-grid.min.js"></script>
     <!--app-->
     <script src="app/shared/templates.js"></script>
@@ -57,6 +51,7 @@
     <script src="app/components/distribution/distribution.controller.js"></script>
     <script src="app/components/distribution/drag.ul.directive.js"></script>
     <script src="app/components/distribution/drop.div.directive.js"></script>
+    <script src="app/components/controladores/controladores.controller.js"></script>
     <script src="app/components/dashboard.controller.js"></script>
     <script src="app/components/data.origin.service.js"></script>
     <script src="app/components/controllers.service.js"></script>
