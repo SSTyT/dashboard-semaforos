@@ -17,14 +17,14 @@
         <div class="title-wrapper">
                 <div class="title">DASHBOARD SEMAFOROS</div>
                 <div class="links-bar">
-                    <div class="link">
+                    <div class="link" ng-click="goTo('distribution')"  ng-class="{'active':hash == 'distribution'}">
                         Distribucion     
                     </div>
-                    <div class="link">
-                        Presupuesto     
+                    <div class="link"  ng-click="goTo('data-sources')"  ng-class="{'active':hash == 'data-sources'}">
+                        Entrada     
                     </div>
-                    <div class="link">
-                        Controladores    
+                    <div class="link"  ng-click="goTo('racambio-tecnico')"  ng-class="{'active':hash == 'racambio-tecnico'}">
+                        Recambio    
                     </div>
                 </div>
         </div>
