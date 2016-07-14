@@ -14,52 +14,28 @@
 
 <body>
     <div class="content" ng-app="dashboard-semaforos" ng-controller="DashboardController as vm">
-        <div class="header">
-            <div class="logo">
-            </div>
-            <div class="title-wrapper">
+        <div class="title-wrapper">
                 <div class="title">DASHBOARD SEMAFOROS</div>
                 <div class="links-bar">
-                    <div>
+                    <div class="link">
                         Distribucion     
                     </div>
-                    <div>
+                    <div class="link">
                         Presupuesto     
                     </div>
-                    <div>
+                    <div class="link">
                         Controladores    
                     </div>
-
-                    
                 </div>
-            </div>
         </div>
-        <div class="content-body">
-            <div class="distribution">
-                <h2>Distribución de Áreas</h2>
-                <div ng-include="'distribution/distribution.html'" scope="" onload="">
-                </div>
-            </div>
-            <div class = "data-sources">
-                
-                <div class="coeficients">
-                    <h3>Coficientes</h3>
-                    <div class="rubro" ng-repeat="(key, rubro) in coeficientes">
-                        <h6>{{rubro.id}}</h6>
-                        <input type="number" name="{{rubro.id}}"  class="form-control" ng-enter="updateRowsMatching('RUBRO',rubro)" ng-model="rubro.value" placeholder="{{rubro.id}}">
-                        <div class="subrubro" ng-repeat="(subrubro_key, subrubro) in rubro.subrubro">
-                            <h6>{{subrubro.id}}</h6>
-                            <input type="number" name="{{subrubro.id}}"  class="form-control" ng-enter="updateRowsMatching('SUBRUBRO',subrubro)" ng-model="subrubro.value" placeholder="{{subrubro.id}}">
-                        </div>                
-                    </div>
-                </div>
+    <div class="content-body">
+       
+        <div class="distribution" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
+        
 
-                <div class="grid-wrapper">
-                <h3>Gastos desagregados</h3>
-                    <div ui-grid="grid" ui-grid-edit  ui-grid-row-edit ui-grid-cellNav ui-grid-resize-columns class="grid"></div>
-                </div>
-            </div>
-        </div>
+        <div class="data-sources-wrapper"     ng-include="'tabla/tabla.html'" scope="" onload=""></div>
+        <div class="recambio-tecnico-wrapper" ng-include="'controladores/controladores.html'" scope="" onload=""></div>
+
     </div>
     <div class="table"></div>
     </div>

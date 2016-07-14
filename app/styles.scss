@@ -8,26 +8,11 @@ body,
 
 
 .content {
-    .header {
-        background: #1D1C1A;
-        height: 102px;
-        display: flex;
-        justify-content: space-between;
-    	padding-left: 1em;
-    	padding-right: 1em;
-        .logo {
-            background: url('../assets/img/bac-footer.png');
-            height: 45px;
-            width: 255px;
-            margin: 15px;
-        }
-        .title-wrapper {
+	    .title-wrapper {
             position: fixed;
 		    display: flex;
-		    flex-direction: column;
 		    align-items: center;
 		    right: 0;
-		    width: 40%;
 		    background: #1D1C1A;
    			z-index:1000;
             
@@ -36,54 +21,55 @@ body,
 			    letter-spacing: 6px !important;
 			    color: #FDD306;
 			    padding: .5em;
-			    font-size: 2em;
+			    padding-left: 1em;
+			    font-size: 1.5em;
             }
             .links-bar{
-            	display: flex;
-            	justify-content: space-between;
-            	color:white;
-            	padding: 1em;
-   				padding-top: 0;
-   				 width: 77%;
+			    display: flex;
+			    justify-content: space-between;
+			    color: white;
+			    padding:1em;
+			    .link{
+			    	padding:.5em;
+			    }
+
             }
         }
-    }
+    // .header {
+    //     background: #1D1C1A;
+    //     height: 102px;
+    //     display: flex;
+    //     justify-content: space-between;
+    // 	padding-left: 1em;
+    // 	padding-right: 1em;
+    //     .logo {
+    //         background: url('../assets/img/bac-footer.png');
+    //         height: 45px;
+    //         width: 255px;
+    //         margin: 15px;
+    //     }
+
+    // }
     .content-body {
         outline: 1px dotted red;
         display: flex;
         flex-direction: column;
+        h2{
+        	padding-left:1em;
+        }
         .distribution {
             outline: 1px dotted gray;
             padding:2em;
+        	padding-top: 0;
+        	width: 100vw;
+        	height: 100vh;
+
             h3 {
                 margin: 1em;
             }
         }
 
-        .data-sources{
-        	display: flex;
-	        .coeficients {
-	            outline: 1px dotted yellow;
-	            padding: 1em;
-	            flex-grow: 1;
-	            .rubro{
-	            	.subrubro{
-	            		padding-left: 2em;
-	            	}
-	            }
-	        }
-		    .grid-wrapper {
-		        outline: 1px dotted blue;
-		                    h3 {
-                margin: 1em;
-            }
-				flex-grow: 1;
-		        .grid {
-		            width: 1920px;
-		            height: 980px;
-		        }
-		    }
-        }
+
     }
     
 }
@@ -91,3 +77,6 @@ body,
 //imports
 @import "components/barchart/barchart";
 @import "components/distribution/distribution";
+@import "components/tabla/tabla";
+@import "components/controladores/controladores";
+

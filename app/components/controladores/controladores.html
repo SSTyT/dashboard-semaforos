@@ -1,0 +1,29 @@
+<h2>Recambio Tecnico</h2>
+
+<div class="data-controladores">
+    
+    <div class="coeficients">
+        <h3>Coficientes</h3>
+        <div class="controladores" >
+          
+            <input type="number" name="costo-controlador"  class="form-control" ng-enter="updateControladores()" ng-model="recambio.controladores.costo" placeholder="Costo">
+            <input type="number" name="factor-controlador"  class="form-control" ng-enter="updateControladores()" ng-model="recambio.controladores.factor" placeholder="Factor">
+                            
+        </div>
+        <div class="nodos" >
+            
+            <input type="number" name="costo-controlador"  class="form-control" ng-enter="updateNodos()" ng-model="recambio.nodo.costo" placeholder="Costo">
+            <input type="number" name="factor-controlador"  class="form-control" ng-enter="updateNodos()" ng-model="recambio.nodo.factor" placeholder="Factor">                    
+        </div>
+        <div class="controladores-por-nodo" >
+            
+            <input type="number" name="costo-controlador"  class="form-control" ng-enter="updateNodos()" ng-model="recambio.controladoresPorNodo" placeholder="Costo">
+        </div>
+
+    </div>
+
+    <div class="costos-wrapper">
+    <h3>Costos por Zonas</h3>
+        <div ui-grid="grid" ui-grid-edit  ui-grid-row-edit ui-grid-cellNav ui-grid-resize-columns class="grid"></div>
+    </div>
+</div>

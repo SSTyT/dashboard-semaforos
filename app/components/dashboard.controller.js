@@ -7,33 +7,34 @@ function DashboardController($scope, $rootScope, $q, DataOriginService) {
   var vm = this;
 
   /*
-EMPRESA
-RUBRO
-SUBRUBRO
-description
-SUBITEM
-UnidadMedida
-CANTIDAD
-precioUnitario
+EM  PRESA
+RU  BRO
+SU  BRUBRO
+de  scription
+SU  BITEM
+Un  idadMedida
+CA  NTIDAD
+precioUnit         ar io
 p2010
-AJUSTE
-NPE
-RESULTADO
+AJ, width:100USTE, width:100
+N, width:100PE
+RESULTA, width:100, width:100DO
 */
   $scope.grid = {
         columnDefs: [
-          { name:'Empresa',  field: 'EMPRESA' , width:100, enableCellEdit: false },
-          { name:'Rubro',    field: 'RUBRO'   , width:100, enableCellEdit: false },
-          { name:'Subrubro', field: 'SUBRUBRO', width:300,  enableCellEdit: false },
-          { name:'Descripcion', field: 'description',enableCellEdit: false },
-          { name:'SubItem', field: 'SUBITEM' ,enableCellEdit: false},
-          { name:'U. M.', field: 'UnidadMedida',enableCellEdit: false },
-          { name:'Cantidad', field: 'CANTIDAD' ,enableCellEdit: true},
-          { name:'Precio U', field: 'precioUnitario' ,enableCellEdit: true},
-          { name:'Precio 2010', field: 'p2010' ,enableCellEdit: false},
-          { name:'Ajuste', field: 'AJUSTE'},
-          { name:'Estimado', field: 'NPE'},
-          { name:'Resultado', field: 'RESULTADO' ,enableCellEdit: false}                  ],
+          { name:'Empresa',     field: 'EMPRESA' ,       width:100, enableCellEdit: false },
+          { name:'Rubro',       field: 'RUBRO'   ,       width:100, enableCellEdit: false },
+          { name:'Subrubro',    field: 'SUBRUBRO',       width:300, enableCellEdit: false },
+          { name:'Descripcion', field: 'description',    width:200, enableCellEdit: false },
+          { name:'SubItem',     field: 'SUBITEM',        width:100, enableCellEdit: false },
+          { name:'U. M.',       field: 'UnidadMedida',   width:100, enableCellEdit: false },
+          { name:'Cantidad',    field: 'CANTIDAD',       width:100, enableCellEdit: true  },
+          { name:'Precio U',    field: 'precionitario',  width:100, enableCellEdit: true  },
+          { name:'Precio 2010', field: 'p2010',          width:150, enableCellEdit: false },
+          { name:'Ajuste',      field: 'AJUSTE',         width:70,  enableCellEdit: true  },
+          { name:'Estimado',    field: 'NPE',            width:100, enableCellEdit: true  },
+          { name:'Resultado',   field: 'RESULTADO',      width:150, enableCellEdit: false }
+        ],
         data:[]
   };
 

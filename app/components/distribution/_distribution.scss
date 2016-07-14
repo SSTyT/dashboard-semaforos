@@ -21,81 +21,107 @@
 .zone6 {
     border-color: #8c564b !important;
 }
-
-.zone-picker {
-    drag-ul {
-        display: inherit;
-        cursor: move;
-    }
-    drop-div {
-        display: inherit;
-    }
-    display: -webkit-flex;
+.dragg-and-drop-area{
+   // outline:red 3px dotted;
     display: flex;
-    .areas {
-        display: -webkit-flex;
-        display: flex;
-        flex-grow: 1;
-        height: 460px;
-        padding: 15px;
-        .list-group {
-            width: 165px;
+
+    .zone-picker {
+        drag-ul {
+            display: inherit;
+            cursor: move;
         }
-    }
-    .drop-container {
-       // flex-grow: 1;
+        drop-div {
+            display: inherit;
+           // outline: 1px solid  gray;
+            width: 50%;
+            padding:.5em;
+
+        }
         display: -webkit-flex;
         display: flex;
-        -webkit-align-items: flex-start;
-        -webkit-justify-content: center;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-            width: 720px;
-        .dropzone {
-            width: 200px;
-            height: 150px;
-            border: solid 2px;
-            margin: 20px;
+        flex-direction:column;
+       // outline: 2px solid red;
+        width: 30%;
+        .areas {
+
             display: -webkit-flex;
             display: flex;
-            -webkit-align-content: flex-start;
+
+            padding: 15px;
+            .list-group {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                background:#f7f7f7;
+                .list-group-item{
+                    border: 1px gray solid;
+
+                }
+            }
+        }
+        .drop-container {
+           // flex-grow: 1;
+            display: -webkit-flex;
+            display: flex;
             -webkit-align-items: flex-start;
-            -webkit-justify-content: flex-start;
+            -webkit-justify-content: center;
             -webkit-flex-flow: row wrap;
             flex-flow: row wrap;
-            .area {
-                margin: 5px;
-                a {
-                    color: white;
-                    cursor: pointer;
+            .dropzone {
+                width: 100%;
+                min-height: 100px;
+                border: solid 2px;
+                margin: .5em;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-content: flex-start;
+                -webkit-align-items: flex-start;
+                -webkit-justify-content: flex-start;
+                -webkit-flex-flow: row wrap;
+                flex-flow: row wrap;
+                position:relative;
+                    border-radius: 4px;
+
+                .name{
+                    bottom: .5em;
+                    right: .5em;
+                    position: absolute;
+                }
+                .area {
+                    margin: 5px;
+                    a {
+                        color: white;
+                        cursor: pointer;
+                    }
                 }
             }
         }
     }
-}
 
-.charts {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: flex-start;
-    -webkit-align-content: flex-start;
-    -webkit-justify-content: center;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-}
+    .charts {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: flex-start;
+        -webkit-align-content: flex-start;
+        -webkit-justify-content: center;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        width: 70%
+    }
 
-.noselect {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Chrome/Safari/Opera */
-    -khtml-user-select: none;
-    /* Konqueror */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                                  not supported by any browser */
+    .noselect {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Chrome/Safari/Opera */
+        -khtml-user-select: none;
+        /* Konqueror */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+                                      not supported by any browser */
+    }
 }
