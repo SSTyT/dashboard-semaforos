@@ -14,24 +14,30 @@
 
 <body>
     <div class="content" ng-app="dashboard-semaforos" ng-controller="DashboardController as vm">
+        <div class="loader-overlay">
+            <div class="loader-wrapper">
+                <img src="assets/img/inovacion.png" alt="">
+                <div class="text">Innovación -  SSTyT </div>
+            </div>
+        </div>
         <div class="title-wrapper">
-            <div class="title">DASHBOARD SEMAFOROS</div>
+            <div class="title">DASHBOARD SEMÁFOROS</div>
             <div class="links-bar">
-                <div class="link" ng-click="goTo('distribution')" ng-class="{'active':hash == 'distribution'}">
-                    Distribucion
+                <div class="link" ng-click="goTo('distribution')"  ng-class="{'active':hash == 'distribution'}">
+                    Distribución     
                 </div>
-                <div class="link" ng-click="goTo('data-sources')" ng-class="{'active':hash == 'data-sources'}">
-                    Entrada
+                <div class="link"  ng-click="goTo('data-sources')"  ng-class="{'active':hash == 'data-sources'}">
+                    Entrada     
                 </div>
-                <div class="link" ng-click="goTo('racambio-tecnico')" ng-class="{'active':hash == 'racambio-tecnico'}">
-                    Recambio
+                <div class="link"  ng-click="goTo('racambio-tecnico')"  ng-class="{'active':hash == 'racambio-tecnico'}">
+                    Recambio    
                 </div>
             </div>
         </div>
         <div class="content-body">
-            <div id="distribution" class="distribution" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
-            <div id="data-sources" class="data-sources-wrapper" ng-include="'tabla/tabla.html'" scope="" onload=""></div>
-            <div id="racambio-tecnico" class="recambio-tecnico-wrapper" ng-include="'controladores/controladores.html'" scope="" onload=""></div>
+            <div id="distribution" class="distribution wrapper" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
+            <div id="data-sources" class="data-sources wrapper" ng-include="'tabla/tabla.html'" scope="" onload=""></div>
+            <div id="racambio-tecnico" class="recambio-tecnico wrapper" ng-include="'controladores/controladores.html'" scope="" onload=""></div>
         </div>
     </div>
     <!--libs-->
