@@ -10,6 +10,8 @@ angular.module('dashboard-semaforos')
         4: 'Optimus'
       };
 
+      $scope.coef = {};
+
       $scope.gridController = {
         columnDefs: [
           { name: 'Zona', field: 'ZONA', enableCellEdit: false }, {
@@ -26,10 +28,10 @@ angular.module('dashboard-semaforos')
               { id: 4, tech: 'Optimus' }
             ]
           },
-          { name: 'Costo 2010', field: 'COSTO2010', enableCellEdit: false },
-          { name: 'N° Controladores', field: 'CONTROLADORES', enableCellEdit: false },
-          { name: 'N° Nodos', field: 'NODOS', enableCellEdit: false },
-          { name: 'Costo Actual', field: 'COSTO', enableCellEdit: false },
+          { name: 'Costo 2010', field: 'COSTO2010', enableCellEdit: false, cellFilter: 'guita' },
+          { name: 'N° Controladores', field: 'CONTROLADORES', enableCellEdit: false, cellFilter: 'int' },
+          { name: 'N° Nodos', field: 'NODOS', enableCellEdit: false, cellFilter: 'int' },
+          { name: 'Costo Actual', field: 'COSTO', enableCellEdit: false, cellFilter: 'guita' },
         ],
         data: []
       };
@@ -42,11 +44,11 @@ angular.module('dashboard-semaforos')
 
         var data = ControllerService.calculate(areas,
           techHash[row.TEC],
-          $scope.recambio.controladores.costo,
-          $scope.recambio.controladores.factor,
-          $scope.recambio.nodo.costo,
-          $scope.recambio.nodo.factor,
-          $scope.recambio.controladoresPorNodo);
+          $scope.coef.controladoresCosto || 1,
+          $scope.coef.controladoresFactor || 1,
+          $scope.coef.nodoCosto || 1,
+          $scope.coef.nodoFactor || 1,
+          $scope.coef.controladoresPorNodo || 1);
 
         row.COSTO2010 = data.costo2010;
         row.CONTROLADORES = data.recambioControlador;
