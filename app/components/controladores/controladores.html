@@ -1,17 +1,14 @@
 <h1>Recambio Técnico</h1>
-
 <div class="data-controladores" ng-controller="ControladoresCtrl">
-    
     <div class="coeficients">
         <h3>Coeficientes</h3>
         <div class="controladores" >
             <h4>Controladores</h4>
             <input type="number" name="costo-controlador"  class="form-control" ng-enter="updateControladores()" ng-model="coef.controladoresCosto" placeholder="Costo" title="Costo">
-            <input type="number" name="factor-controlador"  class="form-control" ng-enter="updateControladores()" ng-model="coef.controladoresFactor" placeholder="Factor" title="Factor">
-                            
+            <input type="number" name="factor-controlador"  class="form-control" ng-enter="updateControladores()" ng-model="coef.controladoresFactor" placeholder="Factor" title="Factor">                    
         </div>
         <div class="nodos" >
-                        <h4>Nodos</h4>
+            <h4>Nodos</h4>
             <input type="number" name="costo-controlador"  class="form-control" ng-enter="updateNodos()" ng-model="coef.nodoCosto" placeholder="Costo" title="Costo">
             <input type="number" name="factor-controlador"  class="form-control" ng-enter="updateNodos()" ng-model="coef.nodoFactor" placeholder="Factor" title="Factor">                    
         </div>
@@ -19,11 +16,9 @@
             <h4>Controladores por Nodo</h4>
             <input type="number" name="costo-controlador"  class="form-control" ng-enter="updateNodos()" ng-model="coef.controladoresPorNodo" placeholder="Controladores por Nodo" title="Controladores por Nodo">
         </div>
-
     </div>
-
     <div class="costos-wrapper">
-    <h3>Costos por zonas</h3>
+        <h3>Costos por zonas</h3>
         <div ui-grid="gridController" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-resize-columns class="grid"></div>
     </div>
 </div>

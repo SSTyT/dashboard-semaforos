@@ -1,5 +1,5 @@
  <h1>Distribución de Áreas</h1>
-<div class="dragg-and-drop-area" ng-controller="DistributionCtrl">
+<div class="distribution" ng-controller="DistributionCtrl">
     <div class="zone-picker">
         <div class="areas">
 
@@ -11,7 +11,7 @@
             <drop-div dropzone="zone" ng-repeat="zone in dropzones"></drop-div>
         </div>
         <div class="Presupuestos-container">
-            <h5>Presupuesto</h5>
+            <h4>Presupuesto</h4>
             <div class="item">  Ordinario: <span class="cifra">{{cantidades.ordinario | guita}}</span></div>
             <div class="item">  Recambio:  <span class="cifra">{{cantidades.recambio | guita}}</span></div>
             <div class="item total">  Total:     <span class="cifra">{{(cantidades.ordinario+cantidades.recambio) | guita}}</span></div>

@@ -130,17 +130,7 @@ body,
         .wrapper{
         	padding: 1em;
         }
-        
-        .distribution {
-            outline: 1px dotted gray;
-        	
-        	width: 100vw;
-        	min-height: 100vh;
 
-            h3 {
-                margin: 1em;
-            }
-        }
     }
 }
 
@@ -169,7 +159,9 @@ body,
 }
 
 .wrapper{
-	opacity:0;	
+	opacity:0;
+	height:100vh;
+	width:100vw;
 	transition-property: all;
     transition-duration: 1s;
 }

@@ -165,6 +165,9 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
 
 
   }
+
+
+  $scope.updateRowsMatching('RUBRO','GENERAL');
   console.log("READY!");
 
 }

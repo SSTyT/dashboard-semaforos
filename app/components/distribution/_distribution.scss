@@ -21,7 +21,7 @@
 .zone6 {
     border-color: #8c564b !important;
 }
-.dragg-and-drop-area{
+.distribution{
    // outline:red 3px dotted;
     display: flex;
 
@@ -139,6 +139,7 @@
                 }
             }
             .item.total{
+                margin-top: .5em;
                 padding: .5em 1em;
                 background:#1D1C1A;
                 color: #FDD306;

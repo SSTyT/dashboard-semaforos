@@ -91,12 +91,6 @@ body {
     padding-left: .5em; }
   .content .content-body .wrapper {
     padding: 1em; }
-  .content .content-body .distribution {
-    outline: 1px dotted gray;
-    width: 100vw;
-    min-height: 100vh; }
-    .content .content-body .distribution h3 {
-      margin: 1em; }
 
 @keyframes show-loader-wrapper {
   from {
@@ -106,6 +100,8 @@ body {
 
 .wrapper {
   opacity: 0;
+  height: 100vh;
+  width: 100vw;
   transition-property: all;
   transition-duration: 1s; }
 
@@ -169,41 +165,41 @@ bar-chart {
 .zone6 {
   border-color: #8c564b !important; }
 
-.dragg-and-drop-area {
+.distribution {
   display: flex; }
-  .dragg-and-drop-area .zone-picker {
+  .distribution .zone-picker {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
     padding: 1em;
     width: 30%; }
-    .dragg-and-drop-area .zone-picker drag-ul {
+    .distribution .zone-picker drag-ul {
       display: inherit;
       cursor: move; }
-    .dragg-and-drop-area .zone-picker drop-div {
+    .distribution .zone-picker drop-div {
       display: inherit;
       width: 50%;
       padding: .5em; }
-    .dragg-and-drop-area .zone-picker .areas {
+    .distribution .zone-picker .areas {
       display: -webkit-flex;
       display: flex;
       padding: 15px;
       padding-bottom: 0; }
-      .dragg-and-drop-area .zone-picker .areas .list-group {
+      .distribution .zone-picker .areas .list-group {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         background: #f7f7f7; }
-        .dragg-and-drop-area .zone-picker .areas .list-group .list-group-item {
+        .distribution .zone-picker .areas .list-group .list-group-item {
           border: 1px gray solid; }
-    .dragg-and-drop-area .zone-picker .drop-container {
+    .distribution .zone-picker .drop-container {
       display: -webkit-flex;
       display: flex;
       -webkit-align-items: flex-start;
       -webkit-justify-content: center;
       -webkit-flex-flow: row wrap;
       flex-flow: row wrap; }
-      .dragg-and-drop-area .zone-picker .drop-container .dropzone {
+      .distribution .zone-picker .drop-container .dropzone {
         width: 100%;
         min-height: 100px;
         border: solid 2px;
@@ -217,9 +213,9 @@ bar-chart {
         flex-flow: row wrap;
         position: relative;
         border-radius: 4px; }
-        .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption:hover .hiden {
+        .distribution .zone-picker .drop-container .dropzone .sub-caption:hover .hiden {
           outline: red dotted 2px; }
-        .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption {
+        .distribution .zone-picker .drop-container .dropzone .sub-caption {
           display: flex;
           flex-direction: column;
           font-size: 10px;
@@ -229,35 +225,36 @@ bar-chart {
           width: 100%;
           justify-content: space-between;
           padding: .2em .5em; }
-          .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption .tooltip {
+          .distribution .zone-picker .drop-container .dropzone .sub-caption .tooltip {
             background: #1D1C1A;
             color: white;
             padding: 1em; }
-          .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption .total {
+          .distribution .zone-picker .drop-container .dropzone .sub-caption .total {
             background: #1D1C1A;
             color: #FDD306;
             padding: .1em .5em; }
-        .dragg-and-drop-area .zone-picker .drop-container .dropzone .name {
+        .distribution .zone-picker .drop-container .dropzone .name {
           bottom: .5em;
           right: .5em;
           position: absolute; }
-        .dragg-and-drop-area .zone-picker .drop-container .dropzone .area {
+        .distribution .zone-picker .drop-container .dropzone .area {
           margin: 5px; }
-          .dragg-and-drop-area .zone-picker .drop-container .dropzone .area a {
+          .distribution .zone-picker .drop-container .dropzone .area a {
             color: white;
             cursor: pointer; }
-    .dragg-and-drop-area .zone-picker .Presupuestos-container {
+    .distribution .zone-picker .Presupuestos-container {
       padding: 0 1em;
       font-family: gotham; }
-      .dragg-and-drop-area .zone-picker .Presupuestos-container .item {
+      .distribution .zone-picker .Presupuestos-container .item {
         width: 50%; }
-        .dragg-and-drop-area .zone-picker .Presupuestos-container .item .cifra {
+        .distribution .zone-picker .Presupuestos-container .item .cifra {
           float: right; }
-      .dragg-and-drop-area .zone-picker .Presupuestos-container .item.total {
+      .distribution .zone-picker .Presupuestos-container .item.total {
+        margin-top: .5em;
         padding: .5em 1em;
         background: #1D1C1A;
         color: #FDD306; }
-  .dragg-and-drop-area .charts {
+  .distribution .charts {
     padding: 1em;
     display: -webkit-flex;
     display: flex;
@@ -267,7 +264,7 @@ bar-chart {
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     width: 70%; }
-  .dragg-and-drop-area .noselect {
+  .distribution .noselect {
     -webkit-touch-callout: none;
     /* iOS Safari */
     -webkit-user-select: none;
@@ -282,34 +279,32 @@ bar-chart {
     /* Non-prefixed version, currently
                                       not supported by any browser */ }
 
-.data-sources.wrapper {
-  height: 100vh; }
-  .data-sources.wrapper .data-sources {
-    display: flex;
-    width: 100vw; }
-    .data-sources.wrapper .data-sources .coeficients {
-      padding: 1em;
-      width: 30%;
-      height: 100%; }
-      .data-sources.wrapper .data-sources .coeficients h3 {
-        margin: 1em;
-        margin-left: 0; }
-      .data-sources.wrapper .data-sources .coeficients .rubro {
-        padding: .25em 0; }
-        .data-sources.wrapper .data-sources .coeficients .rubro .subrubro {
-          padding: .25em 0;
-          padding-left: 2em; }
-    .data-sources.wrapper .data-sources .grid-wrapper {
-      width: 80%;
-      height: 80%;
-      overflow: hidden;
-      padding: 1em; }
-      .data-sources.wrapper .data-sources .grid-wrapper h3 {
-        margin: 1em;
-        margin-left: 0; }
-      .data-sources.wrapper .data-sources .grid-wrapper .grid {
-        width: 90%;
-        height: 60vh; }
+.data-sources {
+  display: flex;
+  width: 100vw; }
+  .data-sources .coeficients {
+    padding: 1em;
+    width: 30%;
+    height: 100%; }
+    .data-sources .coeficients h3 {
+      margin: 1em;
+      margin-left: 0; }
+    .data-sources .coeficients .rubro {
+      padding: .25em 0; }
+      .data-sources .coeficients .rubro .subrubro {
+        padding: .25em 0;
+        padding-left: 2em; }
+  .data-sources .grid-wrapper {
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    padding: 1em; }
+    .data-sources .grid-wrapper h3 {
+      margin: 1em;
+      margin-left: 0; }
+    .data-sources .grid-wrapper .grid {
+      width: 90%;
+      height: 60vh; }
 
 .data-controladores {
   display: flex;
