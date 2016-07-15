@@ -1,7 +1,7 @@
 'use strict';
 angular.module('dashboard-semaforos')
-  .controller('ControladoresCtrl', ['$scope', '$q', 'ControllerService',
-    function ControladoresCtrl($scope, $q, ControllerService) {
+  .controller('ControladoresCtrl', ['$scope', '$q', '$rootScope', 'ControllerService',
+    function ControladoresCtrl($scope, $q, $rootScope, ControllerService) {
 
       var techHash = {
         1: 'Citar',
@@ -10,13 +10,18 @@ angular.module('dashboard-semaforos')
         4: 'Optimus'
       };
 
-      $scope.coef = {};
+      $scope.coef = {
+        controladoresCosto:55000,
+        nodoCosto:250000,
+        controladoresPorNodo:70,
+      };
 
       function refreshData() {
         if ($scope.coef) {
           $scope.gridController.data.forEach(function(row) {
             $scope.saveRow(row);
           });
+          $rootScope.$broadcast('recambio', $scope.gridController.data);
         }
       }
 
@@ -94,10 +99,11 @@ angular.module('dashboard-semaforos')
         row.CONTROLADORES = data.recambioControlador;
         row.NODOS = data.recambioNodos;
         row.COSTO = data.costoActual;
-        
+
         var promise = $q.defer();
         $scope.gridApi.rowEdit.setSavePromise(row, promise.promise);
         promise.resolve();
+        $rootScope.$broadcast('recambio', $scope.gridController.data);
       }
 
       $scope.gridController.onRegisterApi = function(gridApi) {
@@ -136,6 +142,8 @@ angular.module('dashboard-semaforos')
             $scope.gridController.data.push(line);
           }
         });
+
+        $rootScope.$broadcast('recambio', $scope.gridController.data);
       });
 
     }

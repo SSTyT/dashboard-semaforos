@@ -313,13 +313,26 @@ angular.module('dashboard-semaforos')
     }
 
     $scope.dropzones = [
-      { name: "1", areas: [] },
-      { name: "2", areas: [] },
-      { name: "3", areas: [] },
-      { name: "4", areas: [] },
-      { name: "5", areas: [] },
-      { name: "6", areas: [] }
+      { name: "1", areas: [], total: 0, recambio: 0 },
+      { name: "2", areas: [], total: 0, recambio: 0 },
+      { name: "3", areas: [], total: 0, recambio: 0 },
+      { name: "4", areas: [], total: 0, recambio: 0 },
+      { name: "5", areas: [], total: 0, recambio: 0 },
+      { name: "6", areas: [], total: 0, recambio: 0 }
     ]
+
+    $scope.cantidades = {
+      ordinario: 0,
+      recambio: 0
+    }
+
+    $scope.$on('recambio', function(event, data) {
+      $scope.cantidades.recambio = 0;
+      data.forEach(function(zone) {
+        $scope.dropzones[parseInt(zone.ZONA) - 1].recambio = zone.COSTO;
+        $scope.cantidades.recambio += zone.COSTO;
+      });
+    });
 
     function refreshGraphs() {
       $scope.globalChartData = globalChartData();
@@ -328,6 +341,17 @@ angular.module('dashboard-semaforos')
       $scope.cChartData = categoryChartData('C');
 
       $rootScope.$broadcast('zones-change', $scope.dropzones);
+
+      $scope.cantidades.ordinario = 0;
+
+      $scope.dropzones.forEach(function(zone) {
+        zone.total = 0;
+        zone.areas.forEach(function(area) {
+          zone.total += (area.values.A.amount + area.values.B.amount + area.values.C.amount);
+        });
+        $scope.cantidades.ordinario += zone.total;
+      });
+
     }
 
     refreshGraphs();
@@ -341,6 +365,7 @@ angular.module('dashboard-semaforos')
 
 
       target.areas.push(source);
+
       source.assigned = true;
 
       refreshGraphs();

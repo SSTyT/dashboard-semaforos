@@ -12,9 +12,9 @@
         </div>
         <div class="Presupuestos-container">
             <h5>Presupuesto</h5>
-            <div class="item">  Ordinario: <span class="cifra">3.000.00</span></div>
-            <div class="item">  Recambio:  <span class="cifra">5.000.00</span></div>
-            <div class="item total">  Total:     <span class="cifra">8.000.00</span></div>
+            <div class="item">  Ordinario: <span class="cifra">{{cantidades.ordinario | guita}}</span></div>
+            <div class="item">  Recambio:  <span class="cifra">{{cantidades.recambio | guita}}</span></div>
+            <div class="item total">  Total:     <span class="cifra">{{(cantidades.ordinario+cantidades.recambio) | guita}}</span></div>
         </div>
 
     </div>
