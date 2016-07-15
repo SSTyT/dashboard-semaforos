@@ -1,6 +1,6 @@
 'use strict';
 angular.module('dashboard-semaforos')
-  .controller('DashboardController', ['$scope', '$rootScope', '$anchorScroll', '$location', '$q', 'DataOriginService', DashboardController])
+  .controller('DashboardController', ['$scope', '$rootScope', '$anchorScroll', '$timeout','$location', '$q', 'DataOriginService', DashboardController])
   .filter('decimalComa', function() {
     function numberWithCommas(x) {
       var parts = x.toString().split(".");
@@ -52,25 +52,19 @@ angular.module('dashboard-semaforos')
   });
 
 
-function DashboardController($scope, $rootScope, $anchorScroll, $location, $q, DataOriginService) {
+function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $location, $q, DataOriginService) {
 
 
   var vm = this;
-  $scope.hash = "distribution";
-  /*
-EM  PRESA
-RU  BRO
-SU  BRUBRO
-de  scription
-SU  BITEM
-Un  idadMedida
-CA  NTIDAD
-precioUnit         ar io
-p2010
-AJ, width:100USTE, width:100
-N, width:100PE
-RESULTA, width:100, width:100DO
-*/
+  //al infinito y mas aya
+  $scope.hash = "data-sources";
+  $location.hash($scope.hash);
+
+  //the unseen
+  $scope.ready = false;
+  $scope.atras = false;
+
+  
   $scope.grid = {
     columnDefs: [
       { name: 'Empresa', field: 'EMPRESA', width: 100, enableCellEdit: false },
@@ -100,6 +94,15 @@ RESULTA, width:100, width:100DO
     console.log(response);
     $scope.grid.data = response;
 
+    $timeout(function() {
+      
+      $scope.ready = true;
+
+      $timeout(function(){
+        $scope.atras = true;        
+      },1000)
+
+    }, 1000);
   }, function errorCallback(response) {
     console.log(response);
   });
