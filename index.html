@@ -39,9 +39,9 @@
             </div>
         </div>
         <div class="content-body">
-            <div id="data-sources" class="data-sources wrapper" ng-include="'tabla/tabla.html'" scope="" onload=""></div>
-            <div id="distribution" class="distribution wrapper" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
-            <div id="racambio-tecnico" class="recambio-tecnico wrapper" ng-include="'controladores/controladores.html'" scope="" onload=""></div>
+            <div id="data-sources"  class="data-sources wrapper" ng-class="{'fade':hash == 'data-sources'}"  ng-include="'tabla/tabla.html'" scope="" onload=""></div>
+            <div id="distribution"  class="distribution wrapper"  ng-class="{'fade':hash == 'distribution'}" ng-include="'distribution/distribution.html'" scope="" onload=""></div>
+            <div id="racambio-tecnico" class="recambio-tecnico wrapper" ng-class="{'fade':hash == 'racambio-tecnico'}"  ng-include="'controladores/controladores.html'" scope="" onload=""></div>
         </div>
 
     </div>

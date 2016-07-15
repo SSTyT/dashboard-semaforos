@@ -11,8 +11,10 @@ angular.module('dashboard-semaforos')
       };
 
       $scope.coef = {
-        controladoresCosto:55000,
-        nodoCosto:250000,
+        controladoresCosto:22000,
+        controladoresFactor:2.8,
+        nodoCosto:80000,
+        nodoFactor:2.8,
         controladoresPorNodo:70,
       };
 
