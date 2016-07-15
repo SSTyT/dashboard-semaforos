@@ -191,11 +191,15 @@ bar-chart {
         flex-flow: row wrap;
         position: relative;
         border-radius: 4px; }
+        .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption:hover .hiden {
+          outline: red dotted 2px; }
         .dragg-and-drop-area .zone-picker .drop-container .dropzone .sub-caption {
           display: flex;
+          flex-direction: column;
           font-size: 10px;
           position: absolute;
           bottom: -19px;
+          right: 0;
           width: 100%;
           justify-content: space-between;
           padding: .2em .5em; }
