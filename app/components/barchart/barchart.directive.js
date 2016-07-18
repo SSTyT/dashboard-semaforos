@@ -18,10 +18,33 @@ angular.module('dashboard-semaforos')
       return num;
     }
 
+    var temp = {
+      width:document.querySelectorAll(".charts")[0].clientWidth*.48,
+      height:(document.querySelectorAll("body")[0].clientHeight)*.35
+    };
+    console.log("XXXXXXXXXXXXX");
+    console.log(temp);
+    console.log("XXXXXXXXXXXXX");
+
+
+
     //Definicion de areas y ejes
-    var margin = { top: 20, right: 20, bottom: 75, left: 80 },
-      width = 500 - margin.left - margin.right,
-      height = 350 - margin.top - margin.bottom;
+    //var margin = { top: 20, right: 20, bottom: 75, left: 80 },
+      // width = 350 - margin.left - margin.right,
+      // height = 350 - margin.top - margin.bottom;
+
+      var margin = { 
+        top: 20,
+        right: 20, 
+        bottom: 75,
+        left: 80 },
+      width = temp.width - margin.left - margin.right,
+      height = temp.height - margin.top - margin.bottom;
+
+
+
+
+
 
     var x = d3.scale.ordinal()
       .rangeRoundBands([0, width], .1);

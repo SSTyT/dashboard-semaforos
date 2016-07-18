@@ -9,11 +9,11 @@
         	<!-- <div class="tooltip"> -->
         		<!-- <div class="ordinario">{{dropzone.total | guita }}</div>  -->
             	<!-- + <div class="recambio">{{dropzone.recambio | guita }}</div>  -->
-            	<div class="total">Total: {{(dropzone.total+dropzone.recambio) | guita}}</div>
+            	<div class="total">{{(dropzone.total+dropzone.recambio) | guita}}</div>
           <!-- </div> -->
         </span>
         <div ng-if="dropzone.recambio <= 0">
-            <div class="total">Total: {{dropzone.total | guita}}</div> 
+            <div class="total"> {{dropzone.total | guita}}</div> 
         </div>
     </div>
 

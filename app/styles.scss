@@ -16,49 +16,41 @@ body,
 	.loader-overlay.oculto{
 		opacity:0;
 	}
-		.loader-overlay{
-			width: 100vw;
-		    height: 100vh;
-		    position: fixed;
-		   
-		    //z-index: 1001;
-		    display: flex;
+	.loader-overlay{
+		width: 100vw;
+	    height: 100vh;
+	    position: fixed;   
+	    //z-index: 1001;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    background:rgba(253, 211, 6, 0.88);
+	   	transition-property: all;
+		transition-duration: .7s;
+		opacity:1;
+	    z-index: 1001;
 
-		    align-items: center;
-		    justify-content: center;
-		    background:rgba(253, 211, 6, 0.88);
-		   	transition-property: all;
-    		transition-duration: .7s;
-    		opacity:1;
-		     z-index: 1001;
-
-		    .loader-wrapper{
-		    	//transform: translate3d(0,0,0);
-		    	//animation:	show-loader-wrapper 1s;
-				
-		    	
-		    	overflow:hidden;
-		    	 //outline: yellow 2px solid ;
-			    .loader{
-			    	display: flex;
-			    	align-items: center;
-				    justify-content: center;
-			    	background: #1D1C1A;
-		    		padding:2em;
-		    		width: 50vw;
-			    	img{}
-			    	.text{
-					    padding-left: 1em;
-					    color: white;
-					    font-size: 4em;
-					    font-weight: 400;
-					    font-family: gotham;
-			    	}
-			    	
-			    }
+	    .loader-wrapper{
+	    	overflow:hidden;
+		    .loader{
+		    	display: flex;
+		    	align-items: center;
+			    justify-content: center;
+		    	background: #1D1C1A;
+	    		padding:2em;
+	    		width: 50vw;
+		    	img{}
+		    	.text{
+				    padding-left: 1em;
+				    color: white;
+				    font-size: 4em;
+				    font-weight: 400;
+				    font-family: gotham;
+		    	}
 		    }
+	    }
 
-		}
+	}
 		.title-wrapper.visible{
 			transform: translateY(0%);
 		}
@@ -134,19 +126,7 @@ body,
     }
 }
 
-// @keyframes hide-overlay {
-//     from {
-//     	display: flex;
-//         opacity: 1;
-//         z-index:1001; 
-//     }
-//     to {
-//         opacity: 0;
-//         z-index:1001; 
 
-         
-//     }
-// }
 
 @keyframes show-loader-wrapper {
     from {
@@ -171,9 +151,38 @@ body,
 	opacity:1;
 }
 
+
+
+
+
 //imports
 @import "components/barchart/barchart";
 @import "components/distribution/distribution";
 @import "components/tabla/tabla";
 @import "components/controladores/controladores";
 
+@media (max-width: 1366px) and (max-height: 768px){
+	.content {
+		.title-wrapper {
+			//outline: red 3px solid;
+
+	            .title{
+				    letter-spacing: 4px !important;
+				    padding: .3em;
+				    padding-left: .7em;
+				    font-size: 1em;
+	            }
+
+	            .links-bar{
+				    padding:.7em;
+				    .link{
+				    	padding:.3em;
+				    	font-size: .8em;
+				    }
+				    
+
+	            }
+	        }
+	    }
+
+}

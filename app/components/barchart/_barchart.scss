@@ -46,3 +46,17 @@ bar-chart {
         left: 0;
     }
 }
+
+
+
+@media (max-width: 1366px) and (max-height: 768px){
+
+
+    .charts{
+        // outline:red 10px solid ;
+
+        .bar-chart{
+            font-size: 8px;
+        }
+    }
+}

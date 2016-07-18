@@ -57,7 +57,9 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
 
   var vm = this;
   //al infinito y mas aya
-  $scope.hash = "data-sources";
+  //$scope.hash = "data-sources";
+  $scope.hash = "distribution";
+
   $location.hash($scope.hash);
 
   //the unseen
@@ -97,6 +99,7 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
     $timeout(function() {
       
       $scope.ready = true;
+      $scope.updateRowsMatching('RUBRO','GENERAL');
 
       $timeout(function(){
         $scope.atras = true;        
@@ -159,7 +162,17 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
 
 
   function evalAndUpdate(row) {
-    if (row.NPE !== "") { row.RESULTADO = row.NPE; } else if (row.AJUSTE !== "") { row.RESULTADO = row.AJUSTE * row.p2010; } else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== "")) { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; } else if (($scope.coeficientes[row.RUBRO].value !== "")) { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; } else if ($scope.coeficientes["GENERAL"].value !== "") { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; } else { row.RESULTADO = ""; }
+    if (row.NPE !== "")
+      { row.RESULTADO = row.NPE; } 
+    else if (row.AJUSTE !== "")
+      { row.RESULTADO = row.AJUSTE * row.p2010; }
+    else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== ""))
+      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; }
+    else if (($scope.coeficientes[row.RUBRO].value !== ""))
+      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; }
+    else if ($scope.coeficientes["GENERAL"].value !== "")
+      { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; }
+    else { row.RESULTADO = ""; }
 
     $rootScope.$broadcast('grid-change', $scope.grid.data);
 
@@ -167,7 +180,7 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
   }
 
 
-  $scope.updateRowsMatching('RUBRO','GENERAL');
+
   console.log("READY!");
 
 }
