@@ -7,7 +7,7 @@ function ControllerService($q, $http) {
 
   $http({
     method: 'GET',
-    url: '/assets/data/controladores.acum.json'
+    url: './assets/data/controladores.acum.json'
   }).then(function(payload) {
     controllers = payload.data;
   });
