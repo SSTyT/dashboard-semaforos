@@ -10,15 +10,19 @@
 		padding:1em;
 	}
 
-  .coeficients{
-  	width: 30%
-  }
-  .costos-wrapper{
-  	width: 70%;
-  	.grid{
-		width:  90%;
-		height: 60vh;
+	.coeficients{
+		width: 30%;
+		.form-control{
+			font-size: 10px;
+		}
+	}
 
-  	}
+	.costos-wrapper{
+  		width: 70%;
+	  	.grid{
+			width:  90%;
+			height: 60vh;
+
+	  	}
   }
 }

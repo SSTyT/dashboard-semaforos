@@ -14,9 +14,16 @@
             //outline: 3px solid red;
             .rubro{ 
             	padding: .25em 0 ;
+            	.form-control{
+            		font-size: 10px;
+            	}
+
             	.subrubro{
             		padding: .25em 0 ;
             		padding-left: 2em;
+            		.form-control{
+            			font-size: 10px;
+            		}
             	}
             }
         }
@@ -36,6 +43,11 @@
 	        .grid {
 	            width:  90%;
 	            height: 60vh;
+	        }
+
+	        .btn.btn-success{
+
+	        	margin-top: 2em;
 	        }
 	    }
 	}

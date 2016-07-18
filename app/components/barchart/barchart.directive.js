@@ -22,10 +22,6 @@ angular.module('dashboard-semaforos')
       width:document.querySelectorAll(".charts")[0].clientWidth*.48,
       height:(document.querySelectorAll("body")[0].clientHeight)*.35
     };
-    console.log("XXXXXXXXXXXXX");
-    console.log(temp);
-    console.log("XXXXXXXXXXXXX");
-
 
 
     //Definicion de areas y ejes
