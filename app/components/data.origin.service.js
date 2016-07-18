@@ -76,7 +76,7 @@ RESULTADO
 
 			$http({
 			  method: 'GET',
-			  url: '/assets/data/datos.json'
+			  url: './assets/data/datos.json'
 			}).then(success,fail);
 
 
@@ -99,7 +99,7 @@ RESULTADO
 
 			$http({
 			  method: 'GET',
-			  url: '/assets/data/coeficientes.json'
+			  url: './assets/data/coeficientes.json'
 			}).then(success,fail);
 
 		});

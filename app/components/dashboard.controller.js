@@ -1,6 +1,6 @@
 'use strict';
 angular.module('dashboard-semaforos')
-  .controller('DashboardController', ['$scope', '$rootScope', '$anchorScroll', '$timeout','$location', '$q', 'DataOriginService', DashboardController])
+  .controller('DashboardController', ['$scope', '$rootScope', '$anchorScroll', '$timeout', '$location', '$q', 'DataOriginService', DashboardController])
   .filter('decimalComa', function() {
     function numberWithCommas(x) {
       var parts = x.toString().split(".");
@@ -52,7 +52,7 @@ angular.module('dashboard-semaforos')
   });
 
 
-function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $location, $q, DataOriginService) {
+function DashboardController($scope, $rootScope, $anchorScroll, $timeout, $location, $q, DataOriginService) {
 
 
   var vm = this;
@@ -66,7 +66,7 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
   $scope.ready = false;
   $scope.atras = false;
 
-  
+
   $scope.grid = {
     columnDefs: [
       { name: 'Empresa', field: 'EMPRESA', width: 100, enableCellEdit: false },
@@ -86,6 +86,47 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
   };
 
 
+  $scope.getTable = function() {
+    var out = [];
+    $scope.grid.data.forEach(function(row) {
+      var ajuste;
+
+      if (parseFloat(0 + row.AJUSTE) > 0) {
+        ajuste = row.AJUSTE;
+      } else if (parseFloat($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value) > 0) {
+        ajuste = $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value;
+      } else if (parseFloat($scope.coeficientes[row.RUBRO].value) > 0) {
+        ajuste = $scope.coeficientes[row.RUBRO].value;
+      } else if (parseFloat($scope.coeficientes["GENERAL"].value) > 0) {
+        ajuste = $scope.coeficientes["GENERAL"].value;
+      } else {
+        ajuste = 0;
+      }
+
+
+      var csvRow = {
+        'EMPRESA': row.EMPRESA,
+        'RUBRO': row.RUBRO,
+        'SUBRUBRO': row.SUBRUBRO,
+        'DESCRIPCION': row.description,
+        'SUBITEM': row.SUBITEM,
+        'UNIDAD DE MEDIDA': row.UnidadMedida,
+        'CANTIDAD': Math.ceil(parseFloat(0 + row.CANTIDAD)),
+        'PRECIO UNITARIO': Math.round(parseFloat(0 + row.precioUnitario) * 100) / 100,
+        'PRECIO 2010': Math.round(parseFloat(0 + row.p2010) * 100) / 100,
+        'AJUSTE': Math.round(parseFloat(0 + ajuste) * 100) / 100,
+        'ESTIMADO': Math.round(parseFloat(0 + row.NPE) * 100) / 100,
+        'RESULTADO': Math.round(parseFloat(0 + row.RESULTADO) * 100) / 100
+      }
+      out.push(csvRow);
+    });
+    return out;
+  }
+
+  $scope.getHeader = function() {
+    return ['EMPRESA', 'RUBRO', 'SUBRUBRO', 'DESCRIPCION', 'SUBITEM', 'UNIDAD DE MEDIDA', 'CANTIDAD', 'PRECIO UNITARIO', 'PRECIO 2010', 'AJUSTE', 'ESTIMADO', 'RESULTADO'];
+  }
+
   $scope.grid.onRegisterApi = function(gridApi) {
     //set gridApi on scope
     $scope.gridApi = gridApi;
@@ -97,13 +138,13 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
     $scope.grid.data = response;
 
     $timeout(function() {
-      
+
       $scope.ready = true;
       $scope.updateRowsMatching('RUBRO','GENERAL');
 
-      $timeout(function(){
-        $scope.atras = true;        
-      },1000)
+      $timeout(function() {
+        $scope.atras = true;
+      }, 1000)
 
     }, 1000);
   }, function errorCallback(response) {
@@ -162,17 +203,21 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
 
 
   function evalAndUpdate(row) {
-    if (row.NPE !== "")
-      { row.RESULTADO = row.NPE; } 
-    else if (row.AJUSTE !== "")
-      { row.RESULTADO = row.AJUSTE * row.p2010; }
-    else if (($scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value !== ""))
-      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value; }
-    else if (($scope.coeficientes[row.RUBRO].value !== ""))
-      { row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value; }
-    else if ($scope.coeficientes["GENERAL"].value !== "")
-      { row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value; }
-    else { row.RESULTADO = ""; }
+
+    if (parseFloat(0 + row.NPE) > 0) {
+      row.RESULTADO = row.NPE;
+    } else if (parseFloat(0 + row.AJUSTE) > 0) {
+      row.RESULTADO = row.AJUSTE * row.p2010;
+    } else if (parseFloat(0 + $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value) > 0) {
+      row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].subrubro[row.SUBRUBRO].value;
+    } else if (parseFloat(0 + $scope.coeficientes[row.RUBRO].value) > 0) {
+      row.RESULTADO = row.p2010 * $scope.coeficientes[row.RUBRO].value;
+    } else if (parseFloat(0 + $scope.coeficientes["GENERAL"].value) > 0) {
+      row.RESULTADO = row.p2010 * $scope.coeficientes["GENERAL"].value;
+    } else {
+      row.RESULTADO = 0;
+    }
+
 
     $rootScope.$broadcast('grid-change', $scope.grid.data);
 
@@ -180,6 +225,10 @@ function DashboardController($scope, $rootScope, $anchorScroll,$timeout, $locati
   }
 
 
+
+
+
+  $scope.updateRowsMatching('RUBRO', 'GENERAL');
 
   console.log("READY!");
 
