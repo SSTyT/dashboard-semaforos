@@ -1,6 +1,6 @@
 'use strict';
 angular.module('dashboard-semaforos')
-  .controller('DashboardController', ['$scope', '$rootScope', '$anchorScroll', '$timeout', '$location', '$q', 'DataOriginService', DashboardController])
+  .controller('DashboardController', ['$scope', '$rootScope', '$anchorScroll', '$timeout', '$location', '$q', 'DataOriginService', 'PersistenceService', DashboardController])
   .filter('decimalComa', function() {
     function numberWithCommas(x) {
       var parts = x.toString().split(".");
@@ -52,7 +52,8 @@ angular.module('dashboard-semaforos')
   });
 
 
-function DashboardController($scope, $rootScope, $anchorScroll, $timeout, $location, $q, DataOriginService) {
+function DashboardController($scope, $rootScope, $anchorScroll, $timeout,
+  $location, $q, DataOriginService, PersistenceService) {
 
 
   var vm = this;
@@ -85,6 +86,44 @@ function DashboardController($scope, $rootScope, $anchorScroll, $timeout, $locat
     data: []
   };
 
+  $scope.$on('json-loaded', function(event, data) {
+    $scope.$apply(function() {
+      $scope.grid.data.forEach(function(el, i) {
+        angular.extend(el, data.table[i])
+      });
+      $scope.coeficientes = data.coeficientes;
+      $scope.updateRowsMatching('RUBRO', { id: 'GENERAL' });
+    });
+  });
+
+  $scope.$on('zones-change', function(ev,dropzones){
+    $scope.dropzones = [];
+    dropzones.forEach(function(zone){
+      $scope.dropzones.push({
+        name: zone.name, 
+        areas: zone.areas.map(function(el){return el.name}), 
+        total: zone.total, 
+        recambio: zone.recambio
+      });
+    });
+  });
+
+  $scope.downloadJSON = function() {
+    var data = {
+      table: $scope.grid.data,
+      coeficientes: $scope.coeficientes,
+      dropzones: $scope.dropzones
+    }
+    PersistenceService.download(data);
+  }
+
+  $scope.uploadFile = function(files) {
+    PersistenceService.load(files[0]);
+  };
+
+  $scope.openFileLoader = function() {
+    angular.element('#json').click();
+  }
 
   $scope.getTable = function() {
     var out = [];
@@ -140,7 +179,7 @@ function DashboardController($scope, $rootScope, $anchorScroll, $timeout, $locat
     $timeout(function() {
 
       $scope.ready = true;
-      $scope.updateRowsMatching('RUBRO','GENERAL');
+      $scope.updateRowsMatching('RUBRO', { id: 'GENERAL' });
 
       $timeout(function() {
         $scope.atras = true;
@@ -177,8 +216,7 @@ function DashboardController($scope, $rootScope, $anchorScroll, $timeout, $locat
 
   $scope.updateRowsMatching = function updateRowsMatching(field, value) {
     var rows = $scope.grid.data;
-    console.log(field + "" + value);
-    for (var i = rows.length - 1; i >= 0; i--) {
+    for (var i = 0; i < rows.length; i++) {
       if (value.id == "GENERAL" || rows[i][field] == value.id) {
         console.log("match row: " + i);
         evalAndUpdate(rows[i]);
@@ -188,19 +226,13 @@ function DashboardController($scope, $rootScope, $anchorScroll, $timeout, $locat
 
 
   $scope.goTo = function goto(hash) {
-
     $scope.hash = hash;
     if ($location.hash() !== hash) {
-      // set the $location.hash to `newHash` and
-      // $anchorScroll will automatically scroll to it
       $location.hash(hash);
     } else {
-      // call $anchorScroll() explicitly,
-      // since $location.hash hasn't changed
       $anchorScroll();
     }
   }
-
 
   function evalAndUpdate(row) {
 
@@ -218,52 +250,12 @@ function DashboardController($scope, $rootScope, $anchorScroll, $timeout, $locat
       row.RESULTADO = 0;
     }
 
-
     $rootScope.$broadcast('grid-change', $scope.grid.data);
-
 
   }
 
-
-
-
-
-  $scope.updateRowsMatching('RUBRO', 'GENERAL');
+  $scope.updateRowsMatching('RUBRO', { id: 'GENERAL' });
 
   console.log("READY!");
 
 }
-
-
-/*
-
-condiciones  orden 
-
-    npe      =  { resultado =  npe }
-
-    ajuste   =  { resultado =  p2010 * AJUSTE}
-    
-    general  =  { resultado =  p2010 * COE_GENERAL}
-  
-    rubro    =  { resultado =  p2010 * RUBRO}
-    
-    subrubro =  { resultado =  p2010 * SUBRUBRO}
-
-    igual   
-    
-*/
-
-/*
-EMPRESA
-RUBRO
-SUBRUBRO
-description
-SUBITEM
-UnidadMedida
-CANTIDAD
-precioUnitario
-p2010
-AJUSTE
-NPE
-RESULTADO
-*/

@@ -356,6 +356,13 @@ angular.module('dashboard-semaforos')
 
     refreshGraphs();
 
+    $scope.$on('json-loaded', function(event, data) {
+      $scope.areas.forEach(function(area) { area.assigned = false; });
+      data.dropzones.forEach(function(zone,i) {
+        //TODO
+      });
+    });
+
     $scope.$on('drop', function(event, args) {
       var index = $scope.dropzones.indexOf(args.target);
       var target = $scope.dropzones[index];
