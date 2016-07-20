@@ -8,10 +8,10 @@ angular.module('dashboard-semaforos')
       return parts.join(".");
     }
     return function(input) {
-      if (parseInt(0 + input) === 0) {
+      if (parseFloat(0 + input) === 0) {
         return '';
       } else {
-        var out = numberWithCommas(parseFloat(0 + input).toFixed(2)).replace(/\./g, '*');
+        var out = numberWithCommas(parseFloat(0 + input).toFixed(4)).replace(/\./g, '*');
         out = out.replace(/,/g, '.');
         return out.replace(/\*/g, ',');
       }
