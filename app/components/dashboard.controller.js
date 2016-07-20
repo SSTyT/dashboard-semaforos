@@ -94,25 +94,34 @@ function DashboardController($scope, $rootScope, $anchorScroll, $timeout,
       $scope.coeficientes = data.coeficientes;
       $scope.updateRowsMatching('RUBRO', { id: 'GENERAL' });
     });
+    $rootScope.$broadcast('grid-change', $scope.grid.data);
   });
 
-  $scope.$on('zones-change', function(ev,dropzones){
+  $scope.$on('zones-change', function(ev, dropzones) {
     $scope.dropzones = [];
-    dropzones.forEach(function(zone){
+    dropzones.forEach(function(zone) {
       $scope.dropzones.push({
-        name: zone.name, 
-        areas: zone.areas.map(function(el){return el.name}), 
-        total: zone.total, 
+        name: zone.name,
+        areas: zone.areas.map(function(el) {
+          return el.name }),
+        total: zone.total,
         recambio: zone.recambio
       });
     });
+  });
+
+  $scope.$on('recambio-data', function(ev, data) {
+    $scope.controllerCoef = data.coefs;
+    $scope.controllerData = data.data;
   });
 
   $scope.downloadJSON = function() {
     var data = {
       table: $scope.grid.data,
       coeficientes: $scope.coeficientes,
-      dropzones: $scope.dropzones
+      dropzones: $scope.dropzones,
+      controllerCoef: $scope.controllerCoef,
+      controllerData: $scope.controllerData
     }
     PersistenceService.download(data);
   }

@@ -11,12 +11,19 @@ angular.module('dashboard-semaforos')
       };
 
       $scope.coef = {
-        controladoresCosto:22000,
-        controladoresFactor:2.8,
-        nodoCosto:80000,
-        nodoFactor:2.8,
-        controladoresPorNodo:70,
+        controladoresCosto: 22000,
+        controladoresFactor: 2.8,
+        nodoCosto: 80000,
+        nodoFactor: 2.8,
+        controladoresPorNodo: 70,
       };
+
+      $scope.$on('json-loaded', function(event, data) {
+        $scope.coef = data.controllerCoef;
+        $scope.gridController.data = data.controllerData;
+        $rootScope.$broadcast('recambio', $scope.gridController.data);
+      });
+
 
       function refreshData() {
         if ($scope.coef) {
@@ -24,6 +31,7 @@ angular.module('dashboard-semaforos')
             $scope.saveRow(row);
           });
           $rootScope.$broadcast('recambio', $scope.gridController.data);
+          $rootScope.$broadcast('recambio-data', { coefs: $scope.coef, data: $scope.gridController.data });
         }
       }
 
@@ -106,6 +114,7 @@ angular.module('dashboard-semaforos')
         $scope.gridApi.rowEdit.setSavePromise(row, promise.promise);
         promise.resolve();
         $rootScope.$broadcast('recambio', $scope.gridController.data);
+        $rootScope.$broadcast('recambio-data', { coefs: $scope.coef, data: $scope.gridController.data });
       }
 
       $scope.gridController.onRegisterApi = function(gridApi) {
@@ -146,6 +155,8 @@ angular.module('dashboard-semaforos')
         });
 
         $rootScope.$broadcast('recambio', $scope.gridController.data);
+        $rootScope.$broadcast('recambio-data', { coefs: $scope.coef, data: $scope.gridController.data });
+
       });
 
     }
